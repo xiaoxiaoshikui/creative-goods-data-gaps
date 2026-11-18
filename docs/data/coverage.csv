@@ -1,0 +1,199 @@
+code,name,iso3,region,ldc,lldc,sids,years_listed,years_reported,reported_latest,last_year,gap_pct
+876,Wallis and Futuna Islands,WLF,Oceania,False,False,False,22,0,False,,100.0
+232,Eritrea,ERI,Africa,True,False,False,22,1,False,2003.0,95.5
+796,Turks and Caicos Islands,TCA,Americas,False,False,False,14,2,False,2012.0,85.7
+136,Cayman Islands,CYM,Americas,False,False,False,22,4,True,2024.0,81.8
+262,Djibouti,DJI,Africa,True,False,False,22,4,False,2023.0,81.8
+184,Cook Islands,COK,Oceania,False,False,True,18,4,False,2011.0,77.8
+234,Faroe Islands,FRO,Europe,False,False,False,18,4,False,2009.0,77.8
+548,Vanuatu,VUT,Oceania,False,False,True,22,5,False,2011.0,77.3
+694,Sierra Leone,SLE,Africa,True,False,False,21,5,False,2018.0,76.2
+624,Guinea-Bissau,GNB,Africa,True,False,True,12,3,False,2015.0,75.0
+660,Anguilla,AIA,Americas,False,False,True,22,6,False,2008.0,72.7
+531,Curacao,CUW,Americas,False,False,True,14,4,False,2020.0,71.4
+585,Palau,PLW,Oceania,False,False,True,16,5,False,2017.0,68.8
+860,Uzbekistan,UZB,Asia,False,True,False,22,7,True,2024.0,68.2
+729,Sudan,SDN,Africa,True,False,False,22,7,False,2018.0,68.2
+430,Liberia,LBR,Africa,True,False,False,22,7,False,2023.0,68.2
+368,Iraq,IRQ,Asia,False,False,False,22,7,False,2016.0,68.2
+762,Tajikistan,TJK,Asia,False,True,False,22,8,False,2023.0,63.6
+180,Dem. Rep. of the Congo,COD,Africa,True,False,False,22,9,False,2023.0,59.1
+760,Syrian Arab Republic,SYR,Asia,False,False,False,22,9,False,2010.0,59.1
+434,Libya,LBY,Africa,False,False,False,16,7,False,2019.0,56.2
+324,Guinea,GIN,Africa,True,False,False,22,10,False,2016.0,54.5
+598,Papua New Guinea,PNG,Oceania,False,False,True,22,10,False,2023.0,54.5
+626,Timor-Leste,TLS,Asia,True,False,True,22,10,False,2023.0,54.5
+862,Venezuela (Bolivarian Rep. of),VEN,Americas,False,False,False,22,11,False,2013.0,50.0
+583,Micronesia (Federated States of),FSM,Oceania,False,False,True,22,12,False,2013.0,45.5
+192,Cuba,CUB,Americas,False,False,True,22,12,False,2022.0,45.5
+004,Afghanistan,AFG,Asia,True,True,False,22,12,False,2019.0,45.5
+060,Bermuda,BMU,Americas,False,False,False,22,12,True,2024.0,45.5
+887,Yemen,YEM,Asia,True,False,False,21,13,False,2019.0,38.1
+540,New Caledonia,NCL,Oceania,False,False,True,22,14,False,2015.0,36.4
+418,Lao People's Dem. Rep.,LAO,Asia,True,True,False,22,14,False,2023.0,36.4
+104,Myanmar,MMR,Asia,True,False,False,22,14,True,2024.0,36.4
+090,Solomon Islands,SLB,Oceania,True,False,True,14,9,False,2018.0,35.7
+064,Bhutan,BTN,Asia,False,True,False,22,15,False,2023.0,31.8
+524,Nepal,NPL,Asia,True,True,False,22,15,False,2022.0,31.8
+659,Saint Kitts and Nevis,KNA,Americas,False,False,True,22,16,False,2017.0,27.3
+012,Algeria,DZA,Africa,False,False,False,22,16,False,2017.0,27.3
+050,Bangladesh,BGD,Asia,True,False,False,22,16,False,2018.0,27.3
+296,Kiribati,KIR,Oceania,True,False,True,13,10,False,2021.0,23.1
+028,Antigua and Barbuda,ATG,Americas,False,False,True,22,17,True,2024.0,22.7
+496,Mongolia,MNG,Asia,False,True,False,22,17,False,2023.0,22.7
+275,State of Palestine,PSE,Asia,False,False,False,22,17,False,2023.0,22.7
+178,Congo,COG,Africa,False,False,False,22,17,False,2023.0,22.7
+304,Greenland,GRL,Americas,False,False,False,22,17,False,2018.0,22.7
+364,Iran (Islamic Republic of),IRN,Asia,False,False,False,22,17,False,2022.0,22.7
+466,Mali,MLI,Africa,True,True,False,22,18,False,2023.0,18.2
+500,Montserrat,MSR,Americas,False,False,True,22,18,False,2020.0,18.2
+212,Dominica,DMA,Americas,False,False,True,22,19,False,2023.0,13.6
+662,Saint Lucia,LCA,Americas,False,False,True,22,19,False,2020.0,13.6
+340,Honduras,HND,Americas,False,False,False,22,19,True,2024.0,13.6
+404,Kenya,KEN,Africa,False,False,False,22,19,True,2024.0,13.6
+024,Angola,AGO,Africa,True,False,False,15,13,True,2024.0,13.3
+688,Serbia,SRB,Europe,False,False,False,18,16,True,2024.0,11.1
+499,Montenegro,MNE,Europe,False,False,False,18,16,True,2024.0,11.1
+288,Ghana,GHA,Africa,False,False,False,21,19,False,2023.0,9.5
+643,Russian Federation,RUS,Europe,False,False,False,22,20,False,2021.0,9.1
+414,Kuwait,KWT,Asia,False,False,False,22,20,True,2024.0,9.1
+566,Nigeria,NGA,Africa,False,False,False,22,20,True,2024.0,9.1
+478,Mauritania,MRT,Africa,True,False,False,11,10,True,2024.0,9.1
+112,Belarus,BLR,Europe,False,False,False,22,20,False,2021.0,9.1
+776,Tonga,TON,Oceania,False,False,True,22,20,False,2023.0,9.1
+132,Cabo Verde,CPV,Africa,False,False,True,18,17,True,2024.0,5.6
+070,Bosnia and Herzegovina,BIH,Europe,False,False,False,22,21,True,2024.0,4.5
+144,Sri Lanka,LKA,Asia,False,False,False,22,21,True,2024.0,4.5
+646,Rwanda,RWA,Africa,True,True,False,22,21,False,2022.0,4.5
+360,Indonesia,IDN,Asia,False,False,False,22,21,True,2024.0,4.5
+308,Grenada,GRD,Americas,False,False,True,22,21,True,2024.0,4.5
+768,Togo,TGO,Africa,True,False,False,22,21,True,2024.0,4.5
+096,Brunei Darussalam,BRN,Asia,False,False,False,22,21,True,2024.0,4.5
+882,Samoa,WSM,Oceania,False,False,True,22,21,True,2024.0,4.5
+586,Pakistan,PAK,Asia,False,False,False,22,21,True,2024.0,4.5
+562,Niger,NER,Africa,True,True,False,22,22,True,2024.0,0.0
+858,Uruguay,URY,Americas,False,False,False,22,22,True,2024.0,0.0
+752,Sweden,SWE,Europe,False,False,False,22,22,True,2024.0,0.0
+578,Norway,NOR,Europe,False,False,False,22,22,True,2024.0,0.0
+756,Switzerland,CHE,Europe,False,False,False,22,22,True,2024.0,0.0
+800,Uganda,UGA,Africa,True,True,False,22,22,True,2024.0,0.0
+804,Ukraine,UKR,Europe,False,False,False,22,22,True,2024.0,0.0
+690,Seychelles,SYC,Africa,False,False,True,22,22,True,2024.0,0.0
+798,Tuvalu,TUV,Oceania,True,False,True,1,1,False,2004.0,0.0
+558,Nicaragua,NIC,Americas,False,False,False,22,22,True,2024.0,0.0
+554,New Zealand,NZL,Oceania,False,False,False,22,22,True,2024.0,0.0
+748,Eswatini,SWZ,Africa,False,True,False,22,22,False,2023.0,0.0
+764,Thailand,THA,Asia,False,False,False,22,22,True,2024.0,0.0
+533,Aruba,ABW,Americas,False,False,True,16,16,False,2023.0,0.0
+528,Netherlands (Kingdom of the),NLD,Europe,False,False,False,22,22,True,2024.0,0.0
+780,Trinidad and Tobago,TTO,Americas,False,False,True,22,22,True,2024.0,0.0
+516,Namibia,NAM,Africa,False,False,False,22,22,True,2024.0,0.0
+784,United Arab Emirates,ARE,Asia,False,False,False,15,15,False,2023.0,0.0
+788,Tunisia,TUN,Africa,False,False,False,22,22,True,2024.0,0.0
+591,Panama,PAN,Americas,False,False,False,22,22,True,2024.0,0.0
+604,Peru,PER,Americas,False,False,False,22,22,True,2024.0,0.0
+854,Burkina Faso,BFA,Africa,True,True,False,22,22,True,2024.0,0.0
+710,South Africa,ZAF,Africa,False,False,False,22,22,True,2024.0,0.0
+702,Singapore,SGP,Asia,False,False,True,22,22,True,2024.0,0.0
+686,Senegal,SEN,Africa,True,False,False,22,22,True,2024.0,0.0
+682,Saudi Arabia,SAU,Asia,False,False,False,22,22,True,2024.0,0.0
+678,Sao Tome and Principe,STP,Africa,False,False,True,19,19,False,2023.0,0.0
+818,Egypt,EGY,Africa,False,False,False,22,22,True,2024.0,0.0
+670,Saint Vincent and the Grenadines,VCT,Americas,False,False,True,22,22,False,2023.0,0.0
+703,Slovakia,SVK,Europe,False,False,False,22,22,True,2024.0,0.0
+704,Viet Nam,VNM,Asia,False,False,False,22,22,False,2023.0,0.0
+705,Slovenia,SVN,Europe,False,False,False,22,22,True,2024.0,0.0
+792,Turkiye,TUR,Asia,False,False,False,22,22,True,2024.0,0.0
+826,United Kingdom,GBR,Europe,False,False,False,22,22,True,2024.0,0.0
+716,Zimbabwe,ZWE,Africa,False,True,False,22,22,True,2024.0,0.0
+600,Paraguay,PRY,Americas,False,True,False,22,22,True,2024.0,0.0
+724,Spain,ESP,Europe,False,False,False,22,22,True,2024.0,0.0
+642,Romania,ROU,Europe,False,False,False,22,22,True,2024.0,0.0
+634,Qatar,QAT,Asia,False,False,False,22,22,True,2024.0,0.0
+807,North Macedonia,MKD,Europe,False,True,False,22,22,True,2024.0,0.0
+834,United Republic of Tanzania,TZA,Africa,True,False,False,22,22,True,2024.0,0.0
+840,United States,USA,Americas,False,False,False,22,22,True,2024.0,0.0
+740,Suriname,SUR,Americas,False,False,True,22,22,True,2024.0,0.0
+620,Portugal,PRT,Europe,False,False,False,22,22,True,2024.0,0.0
+616,Poland,POL,Europe,False,False,False,22,22,True,2024.0,0.0
+608,Philippines,PHL,Asia,False,False,False,22,22,True,2024.0,0.0
+508,Mozambique,MOZ,Africa,True,False,False,22,22,True,2024.0,0.0
+512,Oman,OMN,Asia,False,False,False,22,22,False,2023.0,0.0
+426,Lesotho,LSO,Africa,True,True,False,22,22,True,2024.0,0.0
+504,Morocco,MAR,Africa,False,False,False,22,22,True,2024.0,0.0
+191,Croatia,HRV,Europe,False,False,False,22,22,True,2024.0,0.0
+140,Central African Republic,CAF,Africa,True,True,False,20,20,True,2024.0,0.0
+152,Chile,CHL,Americas,False,False,False,22,22,True,2024.0,0.0
+156,China,CHN,Asia,False,False,False,22,22,True,2024.0,0.0
+158,"China, Taiwan Province of",TWN,,False,False,False,22,22,True,2024.0,0.0
+170,Colombia,COL,Americas,False,False,False,22,22,True,2024.0,0.0
+174,Comoros,COM,Africa,True,False,True,21,21,False,2023.0,0.0
+188,Costa Rica,CRI,Americas,False,False,False,22,22,True,2024.0,0.0
+196,Cyprus,CYP,Asia,False,False,False,22,22,True,2024.0,0.0
+242,Fiji,FJI,Oceania,False,False,True,22,22,True,2024.0,0.0
+203,Czechia,CZE,Europe,False,False,False,22,22,True,2024.0,0.0
+204,Benin,BEN,Africa,True,False,False,22,22,True,2024.0,0.0
+208,Denmark,DNK,Europe,False,False,False,22,22,True,2024.0,0.0
+214,Dominican Republic,DOM,Americas,False,False,True,22,22,True,2024.0,0.0
+218,Ecuador,ECU,Americas,False,False,False,22,22,True,2024.0,0.0
+222,El Salvador,SLV,Americas,False,False,False,22,22,True,2024.0,0.0
+231,Ethiopia,ETH,Africa,True,True,False,22,22,False,2023.0,0.0
+124,Canada,CAN,Americas,False,False,False,22,22,True,2024.0,0.0
+120,Cameroon,CMR,Africa,False,False,False,22,22,False,2023.0,0.0
+116,Cambodia,KHM,Asia,True,False,False,22,22,True,2024.0,0.0
+108,Burundi,BDI,Africa,True,True,False,22,22,False,2023.0,0.0
+020,Andorra,AND,Europe,False,False,False,22,22,False,2023.0,0.0
+031,Azerbaijan,AZE,Asia,False,True,False,22,22,True,2024.0,0.0
+032,Argentina,ARG,Americas,False,False,False,22,22,True,2024.0,0.0
+036,Australia,AUS,Oceania,False,False,False,22,22,True,2024.0,0.0
+040,Austria,AUT,Europe,False,False,False,22,22,True,2024.0,0.0
+044,Bahamas,BHS,Americas,False,False,True,22,22,True,2024.0,0.0
+048,Bahrain,BHR,Asia,False,False,False,22,22,True,2024.0,0.0
+051,Armenia,ARM,Asia,False,True,False,22,22,True,2024.0,0.0
+052,Barbados,BRB,Americas,False,False,True,22,22,True,2024.0,0.0
+056,Belgium,BEL,Europe,False,False,False,22,22,True,2024.0,0.0
+068,Bolivia (Plurinational State of),BOL,Americas,False,True,False,22,22,True,2024.0,0.0
+072,Botswana,BWA,Africa,False,True,False,22,22,False,2023.0,0.0
+076,Brazil,BRA,Americas,False,False,False,22,22,True,2024.0,0.0
+084,Belize,BLZ,Americas,False,False,True,22,22,True,2024.0,0.0
+100,Bulgaria,BGR,Europe,False,False,False,22,22,True,2024.0,0.0
+233,Estonia,EST,Europe,False,False,False,22,22,True,2024.0,0.0
+246,Finland,FIN,Europe,False,False,False,22,22,True,2024.0,0.0
+498,Republic of Moldova,MDA,Europe,False,True,False,22,22,True,2024.0,0.0
+442,Luxembourg,LUX,Europe,False,False,False,22,22,True,2024.0,0.0
+400,Jordan,JOR,Asia,False,False,False,22,22,False,2023.0,0.0
+410,Republic of Korea,KOR,Asia,False,False,False,22,22,True,2024.0,0.0
+417,Kyrgyzstan,KGZ,Asia,False,True,False,22,22,True,2024.0,0.0
+422,Lebanon,LBN,Asia,False,False,False,22,22,True,2024.0,0.0
+008,Albania,ALB,Europe,False,False,False,22,22,True,2024.0,0.0
+428,Latvia,LVA,Europe,False,False,False,22,22,True,2024.0,0.0
+440,Lithuania,LTU,Europe,False,False,False,22,22,True,2024.0,0.0
+446,"China, Macao SAR",MAC,Asia,False,False,False,22,22,True,2024.0,0.0
+250,France,FRA,Europe,False,False,False,22,22,True,2024.0,0.0
+450,Madagascar,MDG,Africa,True,False,False,22,22,True,2024.0,0.0
+454,Malawi,MWI,Africa,True,True,False,22,22,True,2024.0,0.0
+458,Malaysia,MYS,Asia,False,False,False,22,22,True,2024.0,0.0
+462,Maldives,MDV,Asia,False,False,True,15,15,True,2024.0,0.0
+470,Malta,MLT,Europe,False,False,False,22,22,True,2024.0,0.0
+480,Mauritius,MUS,Africa,False,False,True,22,22,True,2024.0,0.0
+484,Mexico,MEX,Americas,False,False,False,22,22,True,2024.0,0.0
+398,Kazakhstan,KAZ,Asia,False,True,False,22,22,True,2024.0,0.0
+392,Japan,JPN,Asia,False,False,False,22,22,True,2024.0,0.0
+388,Jamaica,JAM,Americas,False,False,True,22,22,False,2023.0,0.0
+384,Cote d'Ivoire,CIV,Africa,False,False,False,22,22,True,2024.0,0.0
+258,French Polynesia,PYF,Oceania,False,False,True,22,22,True,2024.0,0.0
+266,Gabon,GAB,Africa,False,False,False,22,22,False,2023.0,0.0
+268,Georgia,GEO,Asia,False,False,False,22,22,True,2024.0,0.0
+270,Gambia,GMB,Africa,True,False,False,22,22,True,2024.0,0.0
+276,Germany,DEU,Europe,False,False,False,22,22,True,2024.0,0.0
+300,Greece,GRC,Europe,False,False,False,22,22,True,2024.0,0.0
+320,Guatemala,GTM,Americas,False,False,False,22,22,True,2024.0,0.0
+328,Guyana,GUY,Americas,False,False,True,22,22,True,2024.0,0.0
+344,"China, Hong Kong SAR",HKG,Asia,False,False,False,22,22,True,2024.0,0.0
+348,Hungary,HUN,Europe,False,False,False,22,22,True,2024.0,0.0
+352,Iceland,ISL,Europe,False,False,False,22,22,True,2024.0,0.0
+356,India,IND,Asia,False,False,False,22,22,True,2024.0,0.0
+372,Ireland,IRL,Europe,False,False,False,22,22,True,2024.0,0.0
+376,Israel,ISR,Asia,False,False,False,22,22,True,2024.0,0.0
+380,Italy,ITA,Europe,False,False,False,22,22,True,2024.0,0.0
+894,Zambia,ZMB,Africa,True,True,False,22,22,True,2024.0,0.0

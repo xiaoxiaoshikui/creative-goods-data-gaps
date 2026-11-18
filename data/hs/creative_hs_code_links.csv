@@ -1,0 +1,825 @@
+from_version,to_version,category_code,category_label,hs6,relationship,n_targets,targets,code_persists,targets_in_next_list
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",370590,merged_n:1,1,370590,True,all_in_same_category
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",370610,unchanged_1:1,1,370610,True,all_in_same_category
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",370690,unchanged_1:1,1,370690,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570110,unchanged_1:1,1,570110,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570190,unchanged_1:1,1,570190,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570210,unchanged_1:1,1,570210,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570220,unchanged_1:1,1,570220,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570231,unchanged_1:1,1,570231,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570232,unchanged_1:1,1,570232,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570239,unchanged_1:1,1,570239,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570241,unchanged_1:1,1,570241,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570242,unchanged_1:1,1,570242,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570249,unchanged_1:1,1,570249,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570259,merged_n:1,1,570250,False,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570291,unchanged_1:1,1,570291,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570292,unchanged_1:1,1,570292,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570299,unchanged_1:1,1,570299,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570310,unchanged_1:1,1,570310,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570320,unchanged_1:1,1,570320,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570330,unchanged_1:1,1,570330,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570390,unchanged_1:1,1,570390,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570410,unchanged_1:1,1,570410,True,all_in_same_category
+HS2002,HS2007,CER021,Carpets,570500,unchanged_1:1,1,570500,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420211,unchanged_1:1,1,420211,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420212,unchanged_1:1,1,420212,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420221,unchanged_1:1,1,420221,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420222,unchanged_1:1,1,420222,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420231,unchanged_1:1,1,420231,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420232,unchanged_1:1,1,420232,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420292,unchanged_1:1,1,420292,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420310,unchanged_1:1,1,420310,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420329,unchanged_1:1,1,420329,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420330,unchanged_1:1,1,420330,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,420340,unchanged_1:1,1,420340,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,430310,unchanged_1:1,1,430310,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,611710,unchanged_1:1,1,611710,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,611780,merged_n:1,1,611780,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,611790,unchanged_1:1,1,611790,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621410,unchanged_1:1,1,621410,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621420,unchanged_1:1,1,621420,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621430,unchanged_1:1,1,621430,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621440,unchanged_1:1,1,621440,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621490,unchanged_1:1,1,621490,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621510,unchanged_1:1,1,621510,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621520,unchanged_1:1,1,621520,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621590,unchanged_1:1,1,621590,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621710,unchanged_1:1,1,621710,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,621790,unchanged_1:1,1,621790,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,650400,unchanged_1:1,1,650400,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,650590,merged_n:1,1,650590,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,650699,merged_n:1,1,650699,True,all_in_same_category
+HS2002,HS2007,CER022,Fashion accessories,900410,unchanged_1:1,1,900410,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,392640,unchanged_1:1,1,392640,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,441900,unchanged_1:1,1,441900,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,442010,unchanged_1:1,1,442010,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,442090,unchanged_1:1,1,442090,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,480100,unchanged_1:1,1,480100,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,480210,unchanged_1:1,1,480210,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,481420,unchanged_1:1,1,481420,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,481490,merged_n:1,1,481490,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,590500,unchanged_1:1,1,590500,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,670290,unchanged_1:1,1,670290,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,691110,unchanged_1:1,1,691110,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,691190,unchanged_1:1,1,691190,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,691200,unchanged_1:1,1,691200,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,691310,unchanged_1:1,1,691310,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,691390,unchanged_1:1,1,691390,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,691410,unchanged_1:1,1,691410,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,691490,unchanged_1:1,1,691490,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,701310,unchanged_1:1,1,701310,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,701321,split_1:n,2,701322 701333,False,all_in_same_category
+HS2002,HS2007,CER023,Interior,701329,split_1:n,2,701328 701337,False,all_in_same_category
+HS2002,HS2007,CER023,Interior,701331,renumbered_1:1,1,701341,False,all_in_same_category
+HS2002,HS2007,CER023,Interior,701332,renumbered_1:1,1,701342,False,all_in_same_category
+HS2002,HS2007,CER023,Interior,701339,renumbered_1:1,1,701349,False,all_in_same_category
+HS2002,HS2007,CER023,Interior,701391,unchanged_1:1,1,701391,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,701399,unchanged_1:1,1,701399,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,701890,unchanged_1:1,1,701890,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,821510,unchanged_1:1,1,821510,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,821520,unchanged_1:1,1,821520,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,821591,unchanged_1:1,1,821591,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,830610,unchanged_1:1,1,830610,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,830621,unchanged_1:1,1,830621,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,830629,unchanged_1:1,1,830629,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,940320,unchanged_1:1,1,940320,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,940340,unchanged_1:1,1,940340,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,940350,unchanged_1:1,1,940350,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,940360,unchanged_1:1,1,940360,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,940380,split_1:n,2,940381 940389,False,all_in_same_category
+HS2002,HS2007,CER023,Interior,940510,unchanged_1:1,1,940510,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,940530,unchanged_1:1,1,940530,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,950510,unchanged_1:1,1,950510,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,950590,unchanged_1:1,1,950590,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,950810,unchanged_1:1,1,950810,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,960110,unchanged_1:1,1,960110,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,960190,unchanged_1:1,1,960190,True,all_in_same_category
+HS2002,HS2007,CER023,Interior,960200,unchanged_1:1,1,960200,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711311,unchanged_1:1,1,711311,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711319,unchanged_1:1,1,711319,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711320,unchanged_1:1,1,711320,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711411,unchanged_1:1,1,711411,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711419,unchanged_1:1,1,711419,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711420,unchanged_1:1,1,711420,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711610,unchanged_1:1,1,711610,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711620,unchanged_1:1,1,711620,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711711,unchanged_1:1,1,711711,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711719,unchanged_1:1,1,711719,True,all_in_same_category
+HS2002,HS2007,CER024,Jewellery,711790,unchanged_1:1,1,711790,True,all_in_same_category
+HS2002,HS2007,CER025,Toys,950390,merged_n:1,1,950300,False,all_in_same_category
+HS2002,HS2007,CER025,Toys,950420,unchanged_1:1,1,950420,True,all_in_same_category
+HS2002,HS2007,CER025,Toys,950430,unchanged_1:1,1,950430,True,all_in_same_category
+HS2002,HS2007,CER025,Toys,950440,unchanged_1:1,1,950440,True,all_in_same_category
+HS2002,HS2007,CER025,Toys,950490,unchanged_1:1,1,950490,True,all_in_same_category
+HS2002,HS2007,CER026,Wickerware,460120,split_1:n,3,460121 460122 460129,False,all_in_same_category
+HS2002,HS2007,CER026,Wickerware,460191,split_1:n,3,460192 460193 460194,False,all_in_same_category
+HS2002,HS2007,CER026,Wickerware,460199,unchanged_1:1,1,460199,True,all_in_same_category
+HS2002,HS2007,CER026,Wickerware,460210,split_1:n,3,460211 460212 460219,False,all_in_same_category
+HS2002,HS2007,CER026,Wickerware,460290,unchanged_1:1,1,460290,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580410,unchanged_1:1,1,580410,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580421,unchanged_1:1,1,580421,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580429,unchanged_1:1,1,580429,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580430,unchanged_1:1,1,580430,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580500,unchanged_1:1,1,580500,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580610,unchanged_1:1,1,580610,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580620,unchanged_1:1,1,580620,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580631,unchanged_1:1,1,580631,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580632,unchanged_1:1,1,580632,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580639,unchanged_1:1,1,580639,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580640,unchanged_1:1,1,580640,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580810,unchanged_1:1,1,580810,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580890,unchanged_1:1,1,580890,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,580900,unchanged_1:1,1,580900,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,581010,unchanged_1:1,1,581010,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,581091,unchanged_1:1,1,581091,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,581092,unchanged_1:1,1,581092,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,581099,unchanged_1:1,1,581099,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,581100,unchanged_1:1,1,581100,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,600240,complex_n:m,2,300610 600240,True,partly_in_list
+HS2002,HS2007,CER027,Yarn,600290,complex_n:m,2,300610 600290,True,partly_in_list
+HS2002,HS2007,CER027,Yarn,600310,complex_n:m,2,300610 600310,True,partly_in_list
+HS2002,HS2007,CER027,Yarn,600320,complex_n:m,2,300610 600320,True,partly_in_list
+HS2002,HS2007,CER027,Yarn,600330,complex_n:m,2,300610 600330,True,partly_in_list
+HS2002,HS2007,CER027,Yarn,600340,complex_n:m,2,300610 600340,True,partly_in_list
+HS2002,HS2007,CER027,Yarn,600390,complex_n:m,2,300610 600390,True,partly_in_list
+HS2002,HS2007,CER027,Yarn,600410,unchanged_1:1,1,600410,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,600490,unchanged_1:1,1,600490,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,630232,unchanged_1:1,1,630232,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,630240,unchanged_1:1,1,630240,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,630411,unchanged_1:1,1,630411,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,630491,unchanged_1:1,1,630491,True,all_in_same_category
+HS2002,HS2007,CER027,Yarn,630800,unchanged_1:1,1,630800,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490110,unchanged_1:1,1,490110,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490191,unchanged_1:1,1,490191,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490199,unchanged_1:1,1,490199,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490210,unchanged_1:1,1,490210,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490290,unchanged_1:1,1,490290,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490300,unchanged_1:1,1,490300,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490591,unchanged_1:1,1,490591,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490599,unchanged_1:1,1,490599,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490810,unchanged_1:1,1,490810,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490890,unchanged_1:1,1,490890,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,490900,unchanged_1:1,1,490900,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,491000,unchanged_1:1,1,491000,True,all_in_same_category
+HS2002,HS2007,CER030,Books and publishing,491110,unchanged_1:1,1,491110,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",490400,unchanged_1:1,1,490400,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",491191,unchanged_1:1,1,491191,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",852330,merged_n:1,1,852321,False,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920110,unchanged_1:1,1,920110,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920120,unchanged_1:1,1,920120,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920190,unchanged_1:1,1,920190,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920210,unchanged_1:1,1,920210,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920290,unchanged_1:1,1,920290,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920510,unchanged_1:1,1,920510,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920590,merged_n:1,1,920590,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920600,unchanged_1:1,1,920600,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920710,unchanged_1:1,1,920710,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920790,unchanged_1:1,1,920790,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920810,unchanged_1:1,1,920810,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920890,unchanged_1:1,1,920890,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920930,unchanged_1:1,1,920930,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920991,unchanged_1:1,1,920991,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920992,unchanged_1:1,1,920992,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920994,unchanged_1:1,1,920994,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",920999,merged_n:1,1,920999,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",970110,unchanged_1:1,1,970110,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",970190,unchanged_1:1,1,970190,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",970200,unchanged_1:1,1,970200,True,all_in_same_category
+HS2002,HS2007,CER040,"Music, performing and visual arts",970300,unchanged_1:1,1,970300,True,all_in_same_category
+HS2002,HS2007,CER050,Architecture,490600,unchanged_1:1,1,490600,True,all_in_same_category
+HS2002,HS2007,CER060,"Software, video games and recorded media",852313,merged_n:1,1,852329,False,all_in_same_category
+HS2002,HS2007,CER060,"Software, video games and recorded media",852390,complex_n:m,4,852340 852351 852359 852380,False,all_in_list_other_category
+HS2002,HS2007,CER060,"Software, video games and recorded media",854290,complex_n:m,2,852352 854290,True,partly_in_list
+HS2002,HS2007,CER070,Cultural and natural heritage,970400,unchanged_1:1,1,970400,True,all_in_same_category
+HS2002,HS2007,CER070,Cultural and natural heritage,970500,unchanged_1:1,1,970500,True,all_in_same_category
+HS2002,HS2007,CER070,Cultural and natural heritage,970600,unchanged_1:1,1,970600,True,all_in_same_category
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",370590,unchanged_1:1,1,370590,True,all_in_same_category
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",370610,unchanged_1:1,1,370610,True,all_in_same_category
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",370690,unchanged_1:1,1,370690,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570110,unchanged_1:1,1,570110,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570190,unchanged_1:1,1,570190,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570210,unchanged_1:1,1,570210,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570220,unchanged_1:1,1,570220,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570231,unchanged_1:1,1,570231,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570232,unchanged_1:1,1,570232,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570239,unchanged_1:1,1,570239,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570241,unchanged_1:1,1,570241,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570242,unchanged_1:1,1,570242,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570249,unchanged_1:1,1,570249,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570250,unchanged_1:1,1,570250,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570291,unchanged_1:1,1,570291,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570292,unchanged_1:1,1,570292,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570299,unchanged_1:1,1,570299,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570310,unchanged_1:1,1,570310,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570320,unchanged_1:1,1,570320,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570330,unchanged_1:1,1,570330,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570390,unchanged_1:1,1,570390,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570410,unchanged_1:1,1,570410,True,all_in_same_category
+HS2007,HS2012,CER021,Carpets,570500,unchanged_1:1,1,570500,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420211,unchanged_1:1,1,420211,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420212,unchanged_1:1,1,420212,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420221,unchanged_1:1,1,420221,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420222,unchanged_1:1,1,420222,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420231,unchanged_1:1,1,420231,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420232,unchanged_1:1,1,420232,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420292,unchanged_1:1,1,420292,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420310,unchanged_1:1,1,420310,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420329,unchanged_1:1,1,420329,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420330,unchanged_1:1,1,420330,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,420340,unchanged_1:1,1,420340,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,430310,unchanged_1:1,1,430310,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,611710,unchanged_1:1,1,611710,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,611780,unchanged_1:1,1,611780,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,611790,unchanged_1:1,1,611790,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621410,unchanged_1:1,1,621410,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621420,unchanged_1:1,1,621420,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621430,unchanged_1:1,1,621430,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621440,unchanged_1:1,1,621440,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621490,unchanged_1:1,1,621490,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621510,unchanged_1:1,1,621510,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621520,unchanged_1:1,1,621520,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621590,unchanged_1:1,1,621590,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621710,unchanged_1:1,1,621710,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,621790,unchanged_1:1,1,621790,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,650400,unchanged_1:1,1,650400,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,650590,merged_n:1,1,650500,False,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,650699,unchanged_1:1,1,650699,True,all_in_same_category
+HS2007,HS2012,CER022,Fashion accessories,900410,unchanged_1:1,1,900410,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,392640,unchanged_1:1,1,392640,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,441900,unchanged_1:1,1,441900,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,442010,unchanged_1:1,1,442010,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,442090,unchanged_1:1,1,442090,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,480100,unchanged_1:1,1,480100,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,480210,unchanged_1:1,1,480210,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,481420,unchanged_1:1,1,481420,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,481490,merged_n:1,1,481490,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,590500,unchanged_1:1,1,590500,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,670290,unchanged_1:1,1,670290,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,691110,unchanged_1:1,1,691110,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,691190,unchanged_1:1,1,691190,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,691200,unchanged_1:1,1,691200,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,691310,unchanged_1:1,1,691310,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,691390,unchanged_1:1,1,691390,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,691410,unchanged_1:1,1,691410,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,691490,unchanged_1:1,1,691490,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701310,unchanged_1:1,1,701310,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701322,unchanged_1:1,1,701322,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701328,unchanged_1:1,1,701328,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701333,unchanged_1:1,1,701333,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701337,unchanged_1:1,1,701337,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701341,unchanged_1:1,1,701341,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701342,unchanged_1:1,1,701342,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701349,unchanged_1:1,1,701349,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701391,unchanged_1:1,1,701391,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701399,unchanged_1:1,1,701399,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,701890,unchanged_1:1,1,701890,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,821510,unchanged_1:1,1,821510,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,821520,unchanged_1:1,1,821520,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,821591,unchanged_1:1,1,821591,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,830610,unchanged_1:1,1,830610,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,830621,unchanged_1:1,1,830621,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,830629,unchanged_1:1,1,830629,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940320,unchanged_1:1,1,940320,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940340,unchanged_1:1,1,940340,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940350,unchanged_1:1,1,940350,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940360,unchanged_1:1,1,940360,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940381,unchanged_1:1,1,940381,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940389,unchanged_1:1,1,940389,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940510,unchanged_1:1,1,940510,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,940530,unchanged_1:1,1,940530,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,950510,unchanged_1:1,1,950510,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,950590,unchanged_1:1,1,950590,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,950810,unchanged_1:1,1,950810,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,960110,unchanged_1:1,1,960110,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,960190,unchanged_1:1,1,960190,True,all_in_same_category
+HS2007,HS2012,CER023,Interior,960200,unchanged_1:1,1,960200,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711311,unchanged_1:1,1,711311,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711319,unchanged_1:1,1,711319,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711320,unchanged_1:1,1,711320,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711411,unchanged_1:1,1,711411,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711419,unchanged_1:1,1,711419,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711420,unchanged_1:1,1,711420,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711610,unchanged_1:1,1,711610,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711620,unchanged_1:1,1,711620,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711711,unchanged_1:1,1,711711,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711719,unchanged_1:1,1,711719,True,all_in_same_category
+HS2007,HS2012,CER024,Jewellery,711790,unchanged_1:1,1,711790,True,all_in_same_category
+HS2007,HS2012,CER025,Toys,950300,unchanged_1:1,1,950300,True,all_in_same_category
+HS2007,HS2012,CER025,Toys,950420,unchanged_1:1,1,950420,True,all_in_same_category
+HS2007,HS2012,CER025,Toys,950430,unchanged_1:1,1,950430,True,all_in_same_category
+HS2007,HS2012,CER025,Toys,950440,unchanged_1:1,1,950440,True,all_in_same_category
+HS2007,HS2012,CER025,Toys,950490,complex_n:m,2,950450 950490,True,all_in_list_other_category
+HS2007,HS2012,CER026,Wickerware,460121,unchanged_1:1,1,460121,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460122,unchanged_1:1,1,460122,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460129,unchanged_1:1,1,460129,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460192,unchanged_1:1,1,460192,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460193,unchanged_1:1,1,460193,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460194,unchanged_1:1,1,460194,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460199,unchanged_1:1,1,460199,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460211,unchanged_1:1,1,460211,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460212,unchanged_1:1,1,460212,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460219,unchanged_1:1,1,460219,True,all_in_same_category
+HS2007,HS2012,CER026,Wickerware,460290,unchanged_1:1,1,460290,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580410,unchanged_1:1,1,580410,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580421,unchanged_1:1,1,580421,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580429,unchanged_1:1,1,580429,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580430,unchanged_1:1,1,580430,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580500,unchanged_1:1,1,580500,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580610,unchanged_1:1,1,580610,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580620,unchanged_1:1,1,580620,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580631,unchanged_1:1,1,580631,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580632,unchanged_1:1,1,580632,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580639,unchanged_1:1,1,580639,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580640,unchanged_1:1,1,580640,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580810,unchanged_1:1,1,580810,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580890,unchanged_1:1,1,580890,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,580900,unchanged_1:1,1,580900,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,581010,unchanged_1:1,1,581010,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,581091,unchanged_1:1,1,581091,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,581092,unchanged_1:1,1,581092,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,581099,unchanged_1:1,1,581099,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,581100,unchanged_1:1,1,581100,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600240,unchanged_1:1,1,600240,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600290,unchanged_1:1,1,600290,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600310,unchanged_1:1,1,600310,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600320,unchanged_1:1,1,600320,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600330,unchanged_1:1,1,600330,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600340,unchanged_1:1,1,600340,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600390,unchanged_1:1,1,600390,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600410,unchanged_1:1,1,600410,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,600490,unchanged_1:1,1,600490,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,630232,unchanged_1:1,1,630232,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,630240,unchanged_1:1,1,630240,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,630411,unchanged_1:1,1,630411,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,630491,unchanged_1:1,1,630491,True,all_in_same_category
+HS2007,HS2012,CER027,Yarn,630800,unchanged_1:1,1,630800,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490110,unchanged_1:1,1,490110,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490191,unchanged_1:1,1,490191,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490199,unchanged_1:1,1,490199,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490210,unchanged_1:1,1,490210,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490290,unchanged_1:1,1,490290,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490300,unchanged_1:1,1,490300,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490591,unchanged_1:1,1,490591,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490599,unchanged_1:1,1,490599,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490810,unchanged_1:1,1,490810,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490890,unchanged_1:1,1,490890,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,490900,unchanged_1:1,1,490900,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,491000,unchanged_1:1,1,491000,True,all_in_same_category
+HS2007,HS2012,CER030,Books and publishing,491110,unchanged_1:1,1,491110,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",490400,unchanged_1:1,1,490400,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",491191,unchanged_1:1,1,491191,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",852321,unchanged_1:1,1,852321,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",852380,unchanged_1:1,1,852380,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920110,unchanged_1:1,1,920110,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920120,unchanged_1:1,1,920120,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920190,unchanged_1:1,1,920190,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920210,unchanged_1:1,1,920210,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920290,unchanged_1:1,1,920290,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920510,unchanged_1:1,1,920510,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920590,unchanged_1:1,1,920590,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920600,unchanged_1:1,1,920600,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920710,unchanged_1:1,1,920710,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920790,unchanged_1:1,1,920790,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920810,unchanged_1:1,1,920810,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920890,unchanged_1:1,1,920890,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920930,unchanged_1:1,1,920930,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920991,unchanged_1:1,1,920991,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920992,unchanged_1:1,1,920992,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920994,unchanged_1:1,1,920994,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",920999,unchanged_1:1,1,920999,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",970110,unchanged_1:1,1,970110,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",970190,unchanged_1:1,1,970190,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",970200,unchanged_1:1,1,970200,True,all_in_same_category
+HS2007,HS2012,CER040,"Music, performing and visual arts",970300,unchanged_1:1,1,970300,True,all_in_same_category
+HS2007,HS2012,CER050,Architecture,490600,unchanged_1:1,1,490600,True,all_in_same_category
+HS2007,HS2012,CER060,"Software, video games and recorded media",852329,unchanged_1:1,1,852329,True,all_in_same_category
+HS2007,HS2012,CER060,"Software, video games and recorded media",852340,split_1:n,2,852341 852349,False,all_in_same_category
+HS2007,HS2012,CER060,"Software, video games and recorded media",852351,unchanged_1:1,1,852351,True,all_in_same_category
+HS2007,HS2012,CER060,"Software, video games and recorded media",852352,unchanged_1:1,1,852352,True,all_in_same_category
+HS2007,HS2012,CER060,"Software, video games and recorded media",852359,unchanged_1:1,1,852359,True,all_in_same_category
+HS2007,HS2012,CER070,Cultural and natural heritage,970400,unchanged_1:1,1,970400,True,all_in_same_category
+HS2007,HS2012,CER070,Cultural and natural heritage,970500,unchanged_1:1,1,970500,True,all_in_same_category
+HS2007,HS2012,CER070,Cultural and natural heritage,970600,unchanged_1:1,1,970600,True,all_in_same_category
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",370590,merged_n:1,1,370500,False,all_in_same_category
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",370610,unchanged_1:1,1,370610,True,all_in_same_category
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",370690,unchanged_1:1,1,370690,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570110,unchanged_1:1,1,570110,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570190,unchanged_1:1,1,570190,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570210,unchanged_1:1,1,570210,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570220,unchanged_1:1,1,570220,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570231,unchanged_1:1,1,570231,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570232,unchanged_1:1,1,570232,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570239,unchanged_1:1,1,570239,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570241,unchanged_1:1,1,570241,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570242,unchanged_1:1,1,570242,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570249,unchanged_1:1,1,570249,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570250,unchanged_1:1,1,570250,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570291,unchanged_1:1,1,570291,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570292,unchanged_1:1,1,570292,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570299,unchanged_1:1,1,570299,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570310,unchanged_1:1,1,570310,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570320,unchanged_1:1,1,570320,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570330,unchanged_1:1,1,570330,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570390,unchanged_1:1,1,570390,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570410,unchanged_1:1,1,570410,True,all_in_same_category
+HS2012,HS2017,CER021,Carpets,570500,unchanged_1:1,1,570500,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420211,unchanged_1:1,1,420211,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420212,unchanged_1:1,1,420212,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420221,unchanged_1:1,1,420221,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420222,unchanged_1:1,1,420222,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420231,unchanged_1:1,1,420231,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420232,unchanged_1:1,1,420232,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420292,unchanged_1:1,1,420292,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420310,unchanged_1:1,1,420310,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420329,unchanged_1:1,1,420329,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420330,unchanged_1:1,1,420330,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,420340,unchanged_1:1,1,420340,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,430310,unchanged_1:1,1,430310,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,611710,unchanged_1:1,1,611710,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,611780,unchanged_1:1,1,611780,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,611790,unchanged_1:1,1,611790,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621410,unchanged_1:1,1,621410,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621420,unchanged_1:1,1,621420,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621430,unchanged_1:1,1,621430,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621440,unchanged_1:1,1,621440,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621490,unchanged_1:1,1,621490,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621510,unchanged_1:1,1,621510,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621520,unchanged_1:1,1,621520,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621590,unchanged_1:1,1,621590,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621710,unchanged_1:1,1,621710,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,621790,unchanged_1:1,1,621790,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,650400,unchanged_1:1,1,650400,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,650500,unchanged_1:1,1,650500,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,650699,unchanged_1:1,1,650699,True,all_in_same_category
+HS2012,HS2017,CER022,Fashion accessories,900410,unchanged_1:1,1,900410,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,392640,unchanged_1:1,1,392640,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,441900,split_1:n,4,441911 441912 441919 441990,False,all_in_same_category
+HS2012,HS2017,CER023,Interior,442010,unchanged_1:1,1,442010,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,442090,unchanged_1:1,1,442090,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,480100,merged_n:1,1,480100,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,480210,unchanged_1:1,1,480210,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,481420,unchanged_1:1,1,481420,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,481490,unchanged_1:1,1,481490,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,590500,unchanged_1:1,1,590500,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,670290,unchanged_1:1,1,670290,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,691110,unchanged_1:1,1,691110,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,691190,unchanged_1:1,1,691190,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,691200,unchanged_1:1,1,691200,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,691310,unchanged_1:1,1,691310,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,691390,unchanged_1:1,1,691390,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,691410,unchanged_1:1,1,691410,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,691490,unchanged_1:1,1,691490,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701310,unchanged_1:1,1,701310,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701322,unchanged_1:1,1,701322,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701328,unchanged_1:1,1,701328,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701333,unchanged_1:1,1,701333,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701337,unchanged_1:1,1,701337,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701341,unchanged_1:1,1,701341,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701342,unchanged_1:1,1,701342,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701349,unchanged_1:1,1,701349,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701391,unchanged_1:1,1,701391,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701399,unchanged_1:1,1,701399,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,701890,unchanged_1:1,1,701890,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,821510,unchanged_1:1,1,821510,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,821520,unchanged_1:1,1,821520,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,821591,unchanged_1:1,1,821591,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,830610,unchanged_1:1,1,830610,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,830621,unchanged_1:1,1,830621,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,830629,unchanged_1:1,1,830629,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,940320,unchanged_1:1,1,940320,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,940340,unchanged_1:1,1,940340,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,940350,unchanged_1:1,1,940350,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,940360,unchanged_1:1,1,940360,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,940381,split_1:n,2,940382 940383,False,all_in_same_category
+HS2012,HS2017,CER023,Interior,940389,unchanged_1:1,1,940389,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,940510,unchanged_1:1,1,940510,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,940530,unchanged_1:1,1,940530,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,950510,unchanged_1:1,1,950510,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,950590,unchanged_1:1,1,950590,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,950810,unchanged_1:1,1,950810,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,960110,unchanged_1:1,1,960110,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,960190,unchanged_1:1,1,960190,True,all_in_same_category
+HS2012,HS2017,CER023,Interior,960200,unchanged_1:1,1,960200,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711311,unchanged_1:1,1,711311,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711319,unchanged_1:1,1,711319,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711320,unchanged_1:1,1,711320,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711411,unchanged_1:1,1,711411,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711419,unchanged_1:1,1,711419,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711420,unchanged_1:1,1,711420,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711610,unchanged_1:1,1,711610,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711620,unchanged_1:1,1,711620,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711711,unchanged_1:1,1,711711,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711719,unchanged_1:1,1,711719,True,all_in_same_category
+HS2012,HS2017,CER024,Jewellery,711790,unchanged_1:1,1,711790,True,all_in_same_category
+HS2012,HS2017,CER025,Toys,950300,unchanged_1:1,1,950300,True,all_in_same_category
+HS2012,HS2017,CER025,Toys,950420,complex_n:m,4,854231 854232 854239 950420,True,partly_in_list
+HS2012,HS2017,CER025,Toys,950430,complex_n:m,4,854231 854232 854239 950430,True,partly_in_list
+HS2012,HS2017,CER025,Toys,950440,complex_n:m,4,854231 854232 854239 950440,True,partly_in_list
+HS2012,HS2017,CER025,Toys,950490,complex_n:m,4,854231 854232 854239 950490,True,partly_in_list
+HS2012,HS2017,CER026,Wickerware,460121,unchanged_1:1,1,460121,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460122,unchanged_1:1,1,460122,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460129,unchanged_1:1,1,460129,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460192,unchanged_1:1,1,460192,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460193,unchanged_1:1,1,460193,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460194,unchanged_1:1,1,460194,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460199,unchanged_1:1,1,460199,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460211,unchanged_1:1,1,460211,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460212,unchanged_1:1,1,460212,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460219,unchanged_1:1,1,460219,True,all_in_same_category
+HS2012,HS2017,CER026,Wickerware,460290,unchanged_1:1,1,460290,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580410,unchanged_1:1,1,580410,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580421,unchanged_1:1,1,580421,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580429,unchanged_1:1,1,580429,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580430,unchanged_1:1,1,580430,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580500,unchanged_1:1,1,580500,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580610,unchanged_1:1,1,580610,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580620,unchanged_1:1,1,580620,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580631,unchanged_1:1,1,580631,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580632,unchanged_1:1,1,580632,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580639,unchanged_1:1,1,580639,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580640,unchanged_1:1,1,580640,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580810,unchanged_1:1,1,580810,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580890,unchanged_1:1,1,580890,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,580900,unchanged_1:1,1,580900,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,581010,unchanged_1:1,1,581010,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,581091,unchanged_1:1,1,581091,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,581092,unchanged_1:1,1,581092,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,581099,unchanged_1:1,1,581099,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,581100,unchanged_1:1,1,581100,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600240,unchanged_1:1,1,600240,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600290,unchanged_1:1,1,600290,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600310,unchanged_1:1,1,600310,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600320,unchanged_1:1,1,600320,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600330,unchanged_1:1,1,600330,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600340,unchanged_1:1,1,600340,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600390,unchanged_1:1,1,600390,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600410,unchanged_1:1,1,600410,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,600490,unchanged_1:1,1,600490,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,630232,unchanged_1:1,1,630232,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,630240,unchanged_1:1,1,630240,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,630411,unchanged_1:1,1,630411,True,all_in_same_category
+HS2012,HS2017,CER027,Yarn,630491,split_1:n,2,630420 630491,True,partly_in_list
+HS2012,HS2017,CER027,Yarn,630800,unchanged_1:1,1,630800,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490110,unchanged_1:1,1,490110,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490191,unchanged_1:1,1,490191,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490199,unchanged_1:1,1,490199,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490210,unchanged_1:1,1,490210,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490290,unchanged_1:1,1,490290,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490300,unchanged_1:1,1,490300,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490591,unchanged_1:1,1,490591,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490599,unchanged_1:1,1,490599,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490810,unchanged_1:1,1,490810,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490890,unchanged_1:1,1,490890,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,490900,unchanged_1:1,1,490900,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,491000,unchanged_1:1,1,491000,True,all_in_same_category
+HS2012,HS2017,CER030,Books and publishing,491110,unchanged_1:1,1,491110,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",490400,unchanged_1:1,1,490400,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",491191,unchanged_1:1,1,491191,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",852321,unchanged_1:1,1,852321,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",852380,unchanged_1:1,1,852380,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920110,unchanged_1:1,1,920110,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920120,unchanged_1:1,1,920120,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920190,unchanged_1:1,1,920190,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920210,unchanged_1:1,1,920210,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920290,unchanged_1:1,1,920290,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920510,unchanged_1:1,1,920510,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920590,unchanged_1:1,1,920590,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920600,unchanged_1:1,1,920600,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920710,unchanged_1:1,1,920710,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920790,unchanged_1:1,1,920790,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920810,unchanged_1:1,1,920810,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920890,unchanged_1:1,1,920890,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920930,unchanged_1:1,1,920930,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920991,unchanged_1:1,1,920991,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920992,unchanged_1:1,1,920992,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920994,unchanged_1:1,1,920994,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",920999,complex_n:m,2,920999 962000,True,partly_in_list
+HS2012,HS2017,CER040,"Music, performing and visual arts",970110,unchanged_1:1,1,970110,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",970190,unchanged_1:1,1,970190,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",970200,unchanged_1:1,1,970200,True,all_in_same_category
+HS2012,HS2017,CER040,"Music, performing and visual arts",970300,unchanged_1:1,1,970300,True,all_in_same_category
+HS2012,HS2017,CER050,Architecture,490600,unchanged_1:1,1,490600,True,all_in_same_category
+HS2012,HS2017,CER060,"Software, video games and recorded media",852329,unchanged_1:1,1,852329,True,all_in_same_category
+HS2012,HS2017,CER060,"Software, video games and recorded media",852341,unchanged_1:1,1,852341,True,all_in_same_category
+HS2012,HS2017,CER060,"Software, video games and recorded media",852349,unchanged_1:1,1,852349,True,all_in_same_category
+HS2012,HS2017,CER060,"Software, video games and recorded media",852351,unchanged_1:1,1,852351,True,all_in_same_category
+HS2012,HS2017,CER060,"Software, video games and recorded media",852352,unchanged_1:1,1,852352,True,all_in_same_category
+HS2012,HS2017,CER060,"Software, video games and recorded media",852359,unchanged_1:1,1,852359,True,all_in_same_category
+HS2012,HS2017,CER060,"Software, video games and recorded media",950450,complex_n:m,4,854231 854232 854239 950450,True,partly_in_list
+HS2012,HS2017,CER070,Cultural and natural heritage,970400,unchanged_1:1,1,970400,True,all_in_same_category
+HS2012,HS2017,CER070,Cultural and natural heritage,970500,unchanged_1:1,1,970500,True,all_in_same_category
+HS2012,HS2017,CER070,Cultural and natural heritage,970600,unchanged_1:1,1,970600,True,all_in_same_category
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",370500,unchanged_1:1,1,370500,True,all_in_same_category
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",370610,unchanged_1:1,1,370610,True,all_in_same_category
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",370690,unchanged_1:1,1,370690,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570110,unchanged_1:1,1,570110,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570190,unchanged_1:1,1,570190,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570210,unchanged_1:1,1,570210,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570220,unchanged_1:1,1,570220,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570231,unchanged_1:1,1,570231,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570232,unchanged_1:1,1,570232,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570239,unchanged_1:1,1,570239,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570241,unchanged_1:1,1,570241,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570242,unchanged_1:1,1,570242,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570249,unchanged_1:1,1,570249,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570250,unchanged_1:1,1,570250,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570291,unchanged_1:1,1,570291,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570292,unchanged_1:1,1,570292,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570299,unchanged_1:1,1,570299,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570310,unchanged_1:1,1,570310,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570320,split_1:n,2,570321 570329,False,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570330,split_1:n,2,570331 570339,False,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570390,unchanged_1:1,1,570390,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570410,unchanged_1:1,1,570410,True,all_in_same_category
+HS2017,HS2022,CER021,Carpets,570500,unchanged_1:1,1,570500,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420211,unchanged_1:1,1,420211,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420212,unchanged_1:1,1,420212,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420221,unchanged_1:1,1,420221,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420222,unchanged_1:1,1,420222,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420231,unchanged_1:1,1,420231,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420232,unchanged_1:1,1,420232,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420292,unchanged_1:1,1,420292,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420310,unchanged_1:1,1,420310,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420329,unchanged_1:1,1,420329,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420330,unchanged_1:1,1,420330,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,420340,unchanged_1:1,1,420340,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,430310,unchanged_1:1,1,430310,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,611710,unchanged_1:1,1,611710,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,611780,unchanged_1:1,1,611780,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,611790,unchanged_1:1,1,611790,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621410,unchanged_1:1,1,621410,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621420,unchanged_1:1,1,621420,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621430,unchanged_1:1,1,621430,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621440,unchanged_1:1,1,621440,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621490,unchanged_1:1,1,621490,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621510,unchanged_1:1,1,621510,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621520,unchanged_1:1,1,621520,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621590,unchanged_1:1,1,621590,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621710,unchanged_1:1,1,621710,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,621790,unchanged_1:1,1,621790,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,650400,unchanged_1:1,1,650400,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,650500,unchanged_1:1,1,650500,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,650699,unchanged_1:1,1,650699,True,all_in_same_category
+HS2017,HS2022,CER022,Fashion accessories,900410,complex_n:m,7,854921 854929 854931 854939 854991 854999 900410,True,partly_in_list
+HS2017,HS2022,CER023,Interior,392640,unchanged_1:1,1,392640,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,441911,unchanged_1:1,1,441911,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,441912,unchanged_1:1,1,441912,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,441919,unchanged_1:1,1,441919,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,441990,split_1:n,2,441920 441990,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,442010,split_1:n,2,442011 442019,False,all_in_same_category
+HS2017,HS2022,CER023,Interior,442090,unchanged_1:1,1,442090,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,480100,unchanged_1:1,1,480100,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,480210,unchanged_1:1,1,480210,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,481420,unchanged_1:1,1,481420,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,481490,unchanged_1:1,1,481490,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,590500,unchanged_1:1,1,590500,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,670290,unchanged_1:1,1,670290,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,691110,unchanged_1:1,1,691110,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,691190,unchanged_1:1,1,691190,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,691200,unchanged_1:1,1,691200,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,691310,unchanged_1:1,1,691310,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,691390,unchanged_1:1,1,691390,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,691410,unchanged_1:1,1,691410,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,691490,unchanged_1:1,1,691490,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701310,unchanged_1:1,1,701310,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701322,unchanged_1:1,1,701322,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701328,unchanged_1:1,1,701328,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701333,unchanged_1:1,1,701333,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701337,unchanged_1:1,1,701337,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701341,unchanged_1:1,1,701341,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701342,unchanged_1:1,1,701342,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701349,unchanged_1:1,1,701349,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701391,unchanged_1:1,1,701391,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701399,unchanged_1:1,1,701399,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,701890,unchanged_1:1,1,701890,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,821510,unchanged_1:1,1,821510,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,821520,unchanged_1:1,1,821520,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,821591,unchanged_1:1,1,821591,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,830610,unchanged_1:1,1,830610,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,830621,unchanged_1:1,1,830621,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,830629,unchanged_1:1,1,830629,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940320,unchanged_1:1,1,940320,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940340,unchanged_1:1,1,940340,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940350,unchanged_1:1,1,940350,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940360,unchanged_1:1,1,940360,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940382,unchanged_1:1,1,940382,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940383,unchanged_1:1,1,940383,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940389,unchanged_1:1,1,940389,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,940510,complex_n:m,3,853951 940511 940519,False,partly_in_list
+HS2017,HS2022,CER023,Interior,940530,complex_n:m,3,853951 940531 940539,False,partly_in_list
+HS2017,HS2022,CER023,Interior,950510,complex_n:m,14,852411 852412 852419 852491 852492 852499 852990 854921 854929 854931 854939 854991 854999 950510,True,partly_in_list
+HS2017,HS2022,CER023,Interior,950590,complex_n:m,14,852411 852412 852419 852491 852492 852499 852990 854921 854929 854931 854939 854991 854999 950590,True,partly_in_list
+HS2017,HS2022,CER023,Interior,950810,complex_n:m,7,854921 854929 854931 854939 854991 854999 950810,True,partly_in_list
+HS2017,HS2022,CER023,Interior,960110,unchanged_1:1,1,960110,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,960190,unchanged_1:1,1,960190,True,all_in_same_category
+HS2017,HS2022,CER023,Interior,960200,unchanged_1:1,1,960200,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711311,unchanged_1:1,1,711311,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711319,unchanged_1:1,1,711319,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711320,unchanged_1:1,1,711320,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711411,unchanged_1:1,1,711411,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711419,unchanged_1:1,1,711419,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711420,unchanged_1:1,1,711420,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711610,unchanged_1:1,1,711610,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711620,unchanged_1:1,1,711620,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711711,unchanged_1:1,1,711711,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711719,unchanged_1:1,1,711719,True,all_in_same_category
+HS2017,HS2022,CER024,Jewellery,711790,unchanged_1:1,1,711790,True,all_in_same_category
+HS2017,HS2022,CER025,Toys,950300,complex_n:m,14,852411 852412 852419 852491 852492 852499 852990 854921 854929 854931 854939 854991 854999 950300,True,partly_in_list
+HS2017,HS2022,CER025,Toys,950420,complex_n:m,16,852411 852412 852419 852491 852492 852499 852990 854151 854159 854921 854929 854931 854939 854991 854999 950420,True,partly_in_list
+HS2017,HS2022,CER025,Toys,950430,complex_n:m,16,852411 852412 852419 852491 852492 852499 852990 854151 854159 854921 854929 854931 854939 854991 854999 950430,True,partly_in_list
+HS2017,HS2022,CER025,Toys,950440,complex_n:m,16,852411 852412 852419 852491 852492 852499 852990 854151 854159 854921 854929 854931 854939 854991 854999 950440,True,partly_in_list
+HS2017,HS2022,CER025,Toys,950490,complex_n:m,16,852411 852412 852419 852491 852492 852499 852990 854151 854159 854921 854929 854931 854939 854991 854999 950490,True,partly_in_list
+HS2017,HS2022,CER026,Wickerware,460121,unchanged_1:1,1,460121,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460122,unchanged_1:1,1,460122,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460129,unchanged_1:1,1,460129,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460192,unchanged_1:1,1,460192,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460193,unchanged_1:1,1,460193,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460194,unchanged_1:1,1,460194,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460199,unchanged_1:1,1,460199,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460211,unchanged_1:1,1,460211,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460212,unchanged_1:1,1,460212,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460219,unchanged_1:1,1,460219,True,all_in_same_category
+HS2017,HS2022,CER026,Wickerware,460290,unchanged_1:1,1,460290,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580410,unchanged_1:1,1,580410,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580421,unchanged_1:1,1,580421,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580429,unchanged_1:1,1,580429,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580430,unchanged_1:1,1,580430,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580500,unchanged_1:1,1,580500,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580610,unchanged_1:1,1,580610,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580620,unchanged_1:1,1,580620,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580631,unchanged_1:1,1,580631,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580632,unchanged_1:1,1,580632,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580639,unchanged_1:1,1,580639,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580640,unchanged_1:1,1,580640,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580810,unchanged_1:1,1,580810,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580890,unchanged_1:1,1,580890,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,580900,unchanged_1:1,1,580900,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,581010,unchanged_1:1,1,581010,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,581091,unchanged_1:1,1,581091,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,581092,unchanged_1:1,1,581092,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,581099,unchanged_1:1,1,581099,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,581100,unchanged_1:1,1,581100,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600240,unchanged_1:1,1,600240,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600290,unchanged_1:1,1,600290,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600310,unchanged_1:1,1,600310,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600320,unchanged_1:1,1,600320,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600330,unchanged_1:1,1,600330,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600340,unchanged_1:1,1,600340,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600390,unchanged_1:1,1,600390,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600410,unchanged_1:1,1,600410,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,600490,unchanged_1:1,1,600490,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,630232,unchanged_1:1,1,630232,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,630240,unchanged_1:1,1,630240,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,630411,unchanged_1:1,1,630411,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,630491,unchanged_1:1,1,630491,True,all_in_same_category
+HS2017,HS2022,CER027,Yarn,630800,unchanged_1:1,1,630800,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490110,unchanged_1:1,1,490110,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490191,unchanged_1:1,1,490191,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490199,unchanged_1:1,1,490199,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490210,unchanged_1:1,1,490210,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490290,unchanged_1:1,1,490290,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490300,unchanged_1:1,1,490300,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490591,renumbered_1:1,1,490520,False,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490599,merged_n:1,1,490590,False,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490810,unchanged_1:1,1,490810,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490890,unchanged_1:1,1,490890,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,490900,unchanged_1:1,1,490900,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,491000,unchanged_1:1,1,491000,True,all_in_same_category
+HS2017,HS2022,CER030,Books and publishing,491110,unchanged_1:1,1,491110,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",490400,unchanged_1:1,1,490400,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",491191,unchanged_1:1,1,491191,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",852321,complex_n:m,7,852321 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER040,"Music, performing and visual arts",852380,complex_n:m,7,852380 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER040,"Music, performing and visual arts",920110,unchanged_1:1,1,920110,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920120,unchanged_1:1,1,920120,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920190,unchanged_1:1,1,920190,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920210,unchanged_1:1,1,920210,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920290,unchanged_1:1,1,920290,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920510,unchanged_1:1,1,920510,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920590,unchanged_1:1,1,920590,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920600,unchanged_1:1,1,920600,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920710,unchanged_1:1,1,920710,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920790,unchanged_1:1,1,920790,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920810,unchanged_1:1,1,920810,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920890,unchanged_1:1,1,920890,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920930,unchanged_1:1,1,920930,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920991,unchanged_1:1,1,920991,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920992,unchanged_1:1,1,920992,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920994,unchanged_1:1,1,920994,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",920999,unchanged_1:1,1,920999,True,all_in_same_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",970110,split_1:n,2,970121 970191,False,all_in_list_other_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",970190,split_1:n,4,970122 970129 970192 970199,False,all_in_list_other_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",970200,split_1:n,2,970210 970290,False,all_in_list_other_category
+HS2017,HS2022,CER040,"Music, performing and visual arts",970300,split_1:n,2,970310 970390,False,all_in_list_other_category
+HS2017,HS2022,CER050,Architecture,490600,unchanged_1:1,1,490600,True,all_in_same_category
+HS2017,HS2022,CER060,"Software, video games and recorded media",852329,complex_n:m,7,852329 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER060,"Software, video games and recorded media",852341,complex_n:m,7,852341 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER060,"Software, video games and recorded media",852349,complex_n:m,7,852349 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER060,"Software, video games and recorded media",852351,complex_n:m,7,852351 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER060,"Software, video games and recorded media",852352,complex_n:m,7,852352 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER060,"Software, video games and recorded media",852359,complex_n:m,7,852359 854921 854929 854931 854939 854991 854999,True,partly_in_list
+HS2017,HS2022,CER060,"Software, video games and recorded media",950450,complex_n:m,16,852411 852412 852419 852491 852492 852499 852990 854151 854159 854921 854929 854931 854939 854991 854999 950450,True,partly_in_list
+HS2017,HS2022,CER070,Cultural and natural heritage,970400,unchanged_1:1,1,970400,True,all_in_same_category
+HS2017,HS2022,CER070,Cultural and natural heritage,970500,split_1:n,6,970510 970521 970522 970529 970531 970539,False,all_in_same_category
+HS2017,HS2022,CER070,Cultural and natural heritage,970600,split_1:n,2,970610 970690,False,all_in_same_category

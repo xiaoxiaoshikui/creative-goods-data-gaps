@@ -1,0 +1,361 @@
+from_version,to_version,category_code,category_label,relationship,n_codes
+HS2002,HS2007,CER000,All creative goods,unchanged_1:1,166
+HS2002,HS2007,CER000,All creative goods,renumbered_1:1,3
+HS2002,HS2007,CER000,All creative goods,split_1:n,6
+HS2002,HS2007,CER000,All creative goods,merged_n:1,11
+HS2002,HS2007,CER000,All creative goods,complex_n:m,9
+HS2002,HS2007,CER000,All creative goods,not_in_table,0
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",unchanged_1:1,2
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",renumbered_1:1,0
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",split_1:n,0
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",merged_n:1,1
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",complex_n:m,0
+HS2002,HS2007,CER010,"Audiovisual, multimedia and photography",not_in_table,0
+HS2002,HS2007,CER020,Manufacturing of crafts and design goods,unchanged_1:1,126
+HS2002,HS2007,CER020,Manufacturing of crafts and design goods,renumbered_1:1,3
+HS2002,HS2007,CER020,Manufacturing of crafts and design goods,split_1:n,6
+HS2002,HS2007,CER020,Manufacturing of crafts and design goods,merged_n:1,6
+HS2002,HS2007,CER020,Manufacturing of crafts and design goods,complex_n:m,7
+HS2002,HS2007,CER020,Manufacturing of crafts and design goods,not_in_table,0
+HS2002,HS2007,CER021,Carpets,unchanged_1:1,19
+HS2002,HS2007,CER021,Carpets,renumbered_1:1,0
+HS2002,HS2007,CER021,Carpets,split_1:n,0
+HS2002,HS2007,CER021,Carpets,merged_n:1,1
+HS2002,HS2007,CER021,Carpets,complex_n:m,0
+HS2002,HS2007,CER021,Carpets,not_in_table,0
+HS2002,HS2007,CER022,Fashion accessories,unchanged_1:1,26
+HS2002,HS2007,CER022,Fashion accessories,renumbered_1:1,0
+HS2002,HS2007,CER022,Fashion accessories,split_1:n,0
+HS2002,HS2007,CER022,Fashion accessories,merged_n:1,3
+HS2002,HS2007,CER022,Fashion accessories,complex_n:m,0
+HS2002,HS2007,CER022,Fashion accessories,not_in_table,0
+HS2002,HS2007,CER023,Interior,unchanged_1:1,38
+HS2002,HS2007,CER023,Interior,renumbered_1:1,3
+HS2002,HS2007,CER023,Interior,split_1:n,3
+HS2002,HS2007,CER023,Interior,merged_n:1,1
+HS2002,HS2007,CER023,Interior,complex_n:m,0
+HS2002,HS2007,CER023,Interior,not_in_table,0
+HS2002,HS2007,CER024,Jewellery,unchanged_1:1,11
+HS2002,HS2007,CER024,Jewellery,renumbered_1:1,0
+HS2002,HS2007,CER024,Jewellery,split_1:n,0
+HS2002,HS2007,CER024,Jewellery,merged_n:1,0
+HS2002,HS2007,CER024,Jewellery,complex_n:m,0
+HS2002,HS2007,CER024,Jewellery,not_in_table,0
+HS2002,HS2007,CER025,Toys,unchanged_1:1,4
+HS2002,HS2007,CER025,Toys,renumbered_1:1,0
+HS2002,HS2007,CER025,Toys,split_1:n,0
+HS2002,HS2007,CER025,Toys,merged_n:1,1
+HS2002,HS2007,CER025,Toys,complex_n:m,0
+HS2002,HS2007,CER025,Toys,not_in_table,0
+HS2002,HS2007,CER026,Wickerware,unchanged_1:1,2
+HS2002,HS2007,CER026,Wickerware,renumbered_1:1,0
+HS2002,HS2007,CER026,Wickerware,split_1:n,3
+HS2002,HS2007,CER026,Wickerware,merged_n:1,0
+HS2002,HS2007,CER026,Wickerware,complex_n:m,0
+HS2002,HS2007,CER026,Wickerware,not_in_table,0
+HS2002,HS2007,CER027,Yarn,unchanged_1:1,26
+HS2002,HS2007,CER027,Yarn,renumbered_1:1,0
+HS2002,HS2007,CER027,Yarn,split_1:n,0
+HS2002,HS2007,CER027,Yarn,merged_n:1,0
+HS2002,HS2007,CER027,Yarn,complex_n:m,7
+HS2002,HS2007,CER027,Yarn,not_in_table,0
+HS2002,HS2007,CER030,Books and publishing,unchanged_1:1,13
+HS2002,HS2007,CER030,Books and publishing,renumbered_1:1,0
+HS2002,HS2007,CER030,Books and publishing,split_1:n,0
+HS2002,HS2007,CER030,Books and publishing,merged_n:1,0
+HS2002,HS2007,CER030,Books and publishing,complex_n:m,0
+HS2002,HS2007,CER030,Books and publishing,not_in_table,0
+HS2002,HS2007,CER040,"Music, performing and visual arts",unchanged_1:1,21
+HS2002,HS2007,CER040,"Music, performing and visual arts",renumbered_1:1,0
+HS2002,HS2007,CER040,"Music, performing and visual arts",split_1:n,0
+HS2002,HS2007,CER040,"Music, performing and visual arts",merged_n:1,3
+HS2002,HS2007,CER040,"Music, performing and visual arts",complex_n:m,0
+HS2002,HS2007,CER040,"Music, performing and visual arts",not_in_table,0
+HS2002,HS2007,CER050,Architecture,unchanged_1:1,1
+HS2002,HS2007,CER050,Architecture,renumbered_1:1,0
+HS2002,HS2007,CER050,Architecture,split_1:n,0
+HS2002,HS2007,CER050,Architecture,merged_n:1,0
+HS2002,HS2007,CER050,Architecture,complex_n:m,0
+HS2002,HS2007,CER050,Architecture,not_in_table,0
+HS2002,HS2007,CER060,"Software, video games and recorded media",unchanged_1:1,0
+HS2002,HS2007,CER060,"Software, video games and recorded media",renumbered_1:1,0
+HS2002,HS2007,CER060,"Software, video games and recorded media",split_1:n,0
+HS2002,HS2007,CER060,"Software, video games and recorded media",merged_n:1,1
+HS2002,HS2007,CER060,"Software, video games and recorded media",complex_n:m,2
+HS2002,HS2007,CER060,"Software, video games and recorded media",not_in_table,0
+HS2002,HS2007,CER070,Cultural and natural heritage,unchanged_1:1,3
+HS2002,HS2007,CER070,Cultural and natural heritage,renumbered_1:1,0
+HS2002,HS2007,CER070,Cultural and natural heritage,split_1:n,0
+HS2002,HS2007,CER070,Cultural and natural heritage,merged_n:1,0
+HS2002,HS2007,CER070,Cultural and natural heritage,complex_n:m,0
+HS2002,HS2007,CER070,Cultural and natural heritage,not_in_table,0
+HS2007,HS2012,CER000,All creative goods,unchanged_1:1,203
+HS2007,HS2012,CER000,All creative goods,renumbered_1:1,0
+HS2007,HS2012,CER000,All creative goods,split_1:n,1
+HS2007,HS2012,CER000,All creative goods,merged_n:1,2
+HS2007,HS2012,CER000,All creative goods,complex_n:m,1
+HS2007,HS2012,CER000,All creative goods,not_in_table,0
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",unchanged_1:1,3
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",renumbered_1:1,0
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",split_1:n,0
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",merged_n:1,0
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",complex_n:m,0
+HS2007,HS2012,CER010,"Audiovisual, multimedia and photography",not_in_table,0
+HS2007,HS2012,CER020,Manufacturing of crafts and design goods,unchanged_1:1,154
+HS2007,HS2012,CER020,Manufacturing of crafts and design goods,renumbered_1:1,0
+HS2007,HS2012,CER020,Manufacturing of crafts and design goods,split_1:n,0
+HS2007,HS2012,CER020,Manufacturing of crafts and design goods,merged_n:1,2
+HS2007,HS2012,CER020,Manufacturing of crafts and design goods,complex_n:m,1
+HS2007,HS2012,CER020,Manufacturing of crafts and design goods,not_in_table,0
+HS2007,HS2012,CER021,Carpets,unchanged_1:1,20
+HS2007,HS2012,CER021,Carpets,renumbered_1:1,0
+HS2007,HS2012,CER021,Carpets,split_1:n,0
+HS2007,HS2012,CER021,Carpets,merged_n:1,0
+HS2007,HS2012,CER021,Carpets,complex_n:m,0
+HS2007,HS2012,CER021,Carpets,not_in_table,0
+HS2007,HS2012,CER022,Fashion accessories,unchanged_1:1,28
+HS2007,HS2012,CER022,Fashion accessories,renumbered_1:1,0
+HS2007,HS2012,CER022,Fashion accessories,split_1:n,0
+HS2007,HS2012,CER022,Fashion accessories,merged_n:1,1
+HS2007,HS2012,CER022,Fashion accessories,complex_n:m,0
+HS2007,HS2012,CER022,Fashion accessories,not_in_table,0
+HS2007,HS2012,CER023,Interior,unchanged_1:1,47
+HS2007,HS2012,CER023,Interior,renumbered_1:1,0
+HS2007,HS2012,CER023,Interior,split_1:n,0
+HS2007,HS2012,CER023,Interior,merged_n:1,1
+HS2007,HS2012,CER023,Interior,complex_n:m,0
+HS2007,HS2012,CER023,Interior,not_in_table,0
+HS2007,HS2012,CER024,Jewellery,unchanged_1:1,11
+HS2007,HS2012,CER024,Jewellery,renumbered_1:1,0
+HS2007,HS2012,CER024,Jewellery,split_1:n,0
+HS2007,HS2012,CER024,Jewellery,merged_n:1,0
+HS2007,HS2012,CER024,Jewellery,complex_n:m,0
+HS2007,HS2012,CER024,Jewellery,not_in_table,0
+HS2007,HS2012,CER025,Toys,unchanged_1:1,4
+HS2007,HS2012,CER025,Toys,renumbered_1:1,0
+HS2007,HS2012,CER025,Toys,split_1:n,0
+HS2007,HS2012,CER025,Toys,merged_n:1,0
+HS2007,HS2012,CER025,Toys,complex_n:m,1
+HS2007,HS2012,CER025,Toys,not_in_table,0
+HS2007,HS2012,CER026,Wickerware,unchanged_1:1,11
+HS2007,HS2012,CER026,Wickerware,renumbered_1:1,0
+HS2007,HS2012,CER026,Wickerware,split_1:n,0
+HS2007,HS2012,CER026,Wickerware,merged_n:1,0
+HS2007,HS2012,CER026,Wickerware,complex_n:m,0
+HS2007,HS2012,CER026,Wickerware,not_in_table,0
+HS2007,HS2012,CER027,Yarn,unchanged_1:1,33
+HS2007,HS2012,CER027,Yarn,renumbered_1:1,0
+HS2007,HS2012,CER027,Yarn,split_1:n,0
+HS2007,HS2012,CER027,Yarn,merged_n:1,0
+HS2007,HS2012,CER027,Yarn,complex_n:m,0
+HS2007,HS2012,CER027,Yarn,not_in_table,0
+HS2007,HS2012,CER030,Books and publishing,unchanged_1:1,13
+HS2007,HS2012,CER030,Books and publishing,renumbered_1:1,0
+HS2007,HS2012,CER030,Books and publishing,split_1:n,0
+HS2007,HS2012,CER030,Books and publishing,merged_n:1,0
+HS2007,HS2012,CER030,Books and publishing,complex_n:m,0
+HS2007,HS2012,CER030,Books and publishing,not_in_table,0
+HS2007,HS2012,CER040,"Music, performing and visual arts",unchanged_1:1,25
+HS2007,HS2012,CER040,"Music, performing and visual arts",renumbered_1:1,0
+HS2007,HS2012,CER040,"Music, performing and visual arts",split_1:n,0
+HS2007,HS2012,CER040,"Music, performing and visual arts",merged_n:1,0
+HS2007,HS2012,CER040,"Music, performing and visual arts",complex_n:m,0
+HS2007,HS2012,CER040,"Music, performing and visual arts",not_in_table,0
+HS2007,HS2012,CER050,Architecture,unchanged_1:1,1
+HS2007,HS2012,CER050,Architecture,renumbered_1:1,0
+HS2007,HS2012,CER050,Architecture,split_1:n,0
+HS2007,HS2012,CER050,Architecture,merged_n:1,0
+HS2007,HS2012,CER050,Architecture,complex_n:m,0
+HS2007,HS2012,CER050,Architecture,not_in_table,0
+HS2007,HS2012,CER060,"Software, video games and recorded media",unchanged_1:1,4
+HS2007,HS2012,CER060,"Software, video games and recorded media",renumbered_1:1,0
+HS2007,HS2012,CER060,"Software, video games and recorded media",split_1:n,1
+HS2007,HS2012,CER060,"Software, video games and recorded media",merged_n:1,0
+HS2007,HS2012,CER060,"Software, video games and recorded media",complex_n:m,0
+HS2007,HS2012,CER060,"Software, video games and recorded media",not_in_table,0
+HS2007,HS2012,CER070,Cultural and natural heritage,unchanged_1:1,3
+HS2007,HS2012,CER070,Cultural and natural heritage,renumbered_1:1,0
+HS2007,HS2012,CER070,Cultural and natural heritage,split_1:n,0
+HS2007,HS2012,CER070,Cultural and natural heritage,merged_n:1,0
+HS2007,HS2012,CER070,Cultural and natural heritage,complex_n:m,0
+HS2007,HS2012,CER070,Cultural and natural heritage,not_in_table,0
+HS2012,HS2017,CER000,All creative goods,unchanged_1:1,198
+HS2012,HS2017,CER000,All creative goods,renumbered_1:1,0
+HS2012,HS2017,CER000,All creative goods,split_1:n,3
+HS2012,HS2017,CER000,All creative goods,merged_n:1,2
+HS2012,HS2017,CER000,All creative goods,complex_n:m,6
+HS2012,HS2017,CER000,All creative goods,not_in_table,0
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",unchanged_1:1,2
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",renumbered_1:1,0
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",split_1:n,0
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",merged_n:1,1
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",complex_n:m,0
+HS2012,HS2017,CER010,"Audiovisual, multimedia and photography",not_in_table,0
+HS2012,HS2017,CER020,Manufacturing of crafts and design goods,unchanged_1:1,149
+HS2012,HS2017,CER020,Manufacturing of crafts and design goods,renumbered_1:1,0
+HS2012,HS2017,CER020,Manufacturing of crafts and design goods,split_1:n,3
+HS2012,HS2017,CER020,Manufacturing of crafts and design goods,merged_n:1,1
+HS2012,HS2017,CER020,Manufacturing of crafts and design goods,complex_n:m,4
+HS2012,HS2017,CER020,Manufacturing of crafts and design goods,not_in_table,0
+HS2012,HS2017,CER021,Carpets,unchanged_1:1,20
+HS2012,HS2017,CER021,Carpets,renumbered_1:1,0
+HS2012,HS2017,CER021,Carpets,split_1:n,0
+HS2012,HS2017,CER021,Carpets,merged_n:1,0
+HS2012,HS2017,CER021,Carpets,complex_n:m,0
+HS2012,HS2017,CER021,Carpets,not_in_table,0
+HS2012,HS2017,CER022,Fashion accessories,unchanged_1:1,29
+HS2012,HS2017,CER022,Fashion accessories,renumbered_1:1,0
+HS2012,HS2017,CER022,Fashion accessories,split_1:n,0
+HS2012,HS2017,CER022,Fashion accessories,merged_n:1,0
+HS2012,HS2017,CER022,Fashion accessories,complex_n:m,0
+HS2012,HS2017,CER022,Fashion accessories,not_in_table,0
+HS2012,HS2017,CER023,Interior,unchanged_1:1,45
+HS2012,HS2017,CER023,Interior,renumbered_1:1,0
+HS2012,HS2017,CER023,Interior,split_1:n,2
+HS2012,HS2017,CER023,Interior,merged_n:1,1
+HS2012,HS2017,CER023,Interior,complex_n:m,0
+HS2012,HS2017,CER023,Interior,not_in_table,0
+HS2012,HS2017,CER024,Jewellery,unchanged_1:1,11
+HS2012,HS2017,CER024,Jewellery,renumbered_1:1,0
+HS2012,HS2017,CER024,Jewellery,split_1:n,0
+HS2012,HS2017,CER024,Jewellery,merged_n:1,0
+HS2012,HS2017,CER024,Jewellery,complex_n:m,0
+HS2012,HS2017,CER024,Jewellery,not_in_table,0
+HS2012,HS2017,CER025,Toys,unchanged_1:1,1
+HS2012,HS2017,CER025,Toys,renumbered_1:1,0
+HS2012,HS2017,CER025,Toys,split_1:n,0
+HS2012,HS2017,CER025,Toys,merged_n:1,0
+HS2012,HS2017,CER025,Toys,complex_n:m,4
+HS2012,HS2017,CER025,Toys,not_in_table,0
+HS2012,HS2017,CER026,Wickerware,unchanged_1:1,11
+HS2012,HS2017,CER026,Wickerware,renumbered_1:1,0
+HS2012,HS2017,CER026,Wickerware,split_1:n,0
+HS2012,HS2017,CER026,Wickerware,merged_n:1,0
+HS2012,HS2017,CER026,Wickerware,complex_n:m,0
+HS2012,HS2017,CER026,Wickerware,not_in_table,0
+HS2012,HS2017,CER027,Yarn,unchanged_1:1,32
+HS2012,HS2017,CER027,Yarn,renumbered_1:1,0
+HS2012,HS2017,CER027,Yarn,split_1:n,1
+HS2012,HS2017,CER027,Yarn,merged_n:1,0
+HS2012,HS2017,CER027,Yarn,complex_n:m,0
+HS2012,HS2017,CER027,Yarn,not_in_table,0
+HS2012,HS2017,CER030,Books and publishing,unchanged_1:1,13
+HS2012,HS2017,CER030,Books and publishing,renumbered_1:1,0
+HS2012,HS2017,CER030,Books and publishing,split_1:n,0
+HS2012,HS2017,CER030,Books and publishing,merged_n:1,0
+HS2012,HS2017,CER030,Books and publishing,complex_n:m,0
+HS2012,HS2017,CER030,Books and publishing,not_in_table,0
+HS2012,HS2017,CER040,"Music, performing and visual arts",unchanged_1:1,24
+HS2012,HS2017,CER040,"Music, performing and visual arts",renumbered_1:1,0
+HS2012,HS2017,CER040,"Music, performing and visual arts",split_1:n,0
+HS2012,HS2017,CER040,"Music, performing and visual arts",merged_n:1,0
+HS2012,HS2017,CER040,"Music, performing and visual arts",complex_n:m,1
+HS2012,HS2017,CER040,"Music, performing and visual arts",not_in_table,0
+HS2012,HS2017,CER050,Architecture,unchanged_1:1,1
+HS2012,HS2017,CER050,Architecture,renumbered_1:1,0
+HS2012,HS2017,CER050,Architecture,split_1:n,0
+HS2012,HS2017,CER050,Architecture,merged_n:1,0
+HS2012,HS2017,CER050,Architecture,complex_n:m,0
+HS2012,HS2017,CER050,Architecture,not_in_table,0
+HS2012,HS2017,CER060,"Software, video games and recorded media",unchanged_1:1,6
+HS2012,HS2017,CER060,"Software, video games and recorded media",renumbered_1:1,0
+HS2012,HS2017,CER060,"Software, video games and recorded media",split_1:n,0
+HS2012,HS2017,CER060,"Software, video games and recorded media",merged_n:1,0
+HS2012,HS2017,CER060,"Software, video games and recorded media",complex_n:m,1
+HS2012,HS2017,CER060,"Software, video games and recorded media",not_in_table,0
+HS2012,HS2017,CER070,Cultural and natural heritage,unchanged_1:1,3
+HS2012,HS2017,CER070,Cultural and natural heritage,renumbered_1:1,0
+HS2012,HS2017,CER070,Cultural and natural heritage,split_1:n,0
+HS2012,HS2017,CER070,Cultural and natural heritage,merged_n:1,0
+HS2012,HS2017,CER070,Cultural and natural heritage,complex_n:m,0
+HS2012,HS2017,CER070,Cultural and natural heritage,not_in_table,0
+HS2017,HS2022,CER000,All creative goods,unchanged_1:1,181
+HS2017,HS2022,CER000,All creative goods,renumbered_1:1,1
+HS2017,HS2022,CER000,All creative goods,split_1:n,10
+HS2017,HS2022,CER000,All creative goods,merged_n:1,1
+HS2017,HS2022,CER000,All creative goods,complex_n:m,20
+HS2017,HS2022,CER000,All creative goods,not_in_table,0
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",unchanged_1:1,3
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",renumbered_1:1,0
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",split_1:n,0
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",merged_n:1,0
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",complex_n:m,0
+HS2017,HS2022,CER010,"Audiovisual, multimedia and photography",not_in_table,0
+HS2017,HS2022,CER020,Manufacturing of crafts and design goods,unchanged_1:1,146
+HS2017,HS2022,CER020,Manufacturing of crafts and design goods,renumbered_1:1,0
+HS2017,HS2022,CER020,Manufacturing of crafts and design goods,split_1:n,4
+HS2017,HS2022,CER020,Manufacturing of crafts and design goods,merged_n:1,0
+HS2017,HS2022,CER020,Manufacturing of crafts and design goods,complex_n:m,11
+HS2017,HS2022,CER020,Manufacturing of crafts and design goods,not_in_table,0
+HS2017,HS2022,CER021,Carpets,unchanged_1:1,18
+HS2017,HS2022,CER021,Carpets,renumbered_1:1,0
+HS2017,HS2022,CER021,Carpets,split_1:n,2
+HS2017,HS2022,CER021,Carpets,merged_n:1,0
+HS2017,HS2022,CER021,Carpets,complex_n:m,0
+HS2017,HS2022,CER021,Carpets,not_in_table,0
+HS2017,HS2022,CER022,Fashion accessories,unchanged_1:1,28
+HS2017,HS2022,CER022,Fashion accessories,renumbered_1:1,0
+HS2017,HS2022,CER022,Fashion accessories,split_1:n,0
+HS2017,HS2022,CER022,Fashion accessories,merged_n:1,0
+HS2017,HS2022,CER022,Fashion accessories,complex_n:m,1
+HS2017,HS2022,CER022,Fashion accessories,not_in_table,0
+HS2017,HS2022,CER023,Interior,unchanged_1:1,45
+HS2017,HS2022,CER023,Interior,renumbered_1:1,0
+HS2017,HS2022,CER023,Interior,split_1:n,2
+HS2017,HS2022,CER023,Interior,merged_n:1,0
+HS2017,HS2022,CER023,Interior,complex_n:m,5
+HS2017,HS2022,CER023,Interior,not_in_table,0
+HS2017,HS2022,CER024,Jewellery,unchanged_1:1,11
+HS2017,HS2022,CER024,Jewellery,renumbered_1:1,0
+HS2017,HS2022,CER024,Jewellery,split_1:n,0
+HS2017,HS2022,CER024,Jewellery,merged_n:1,0
+HS2017,HS2022,CER024,Jewellery,complex_n:m,0
+HS2017,HS2022,CER024,Jewellery,not_in_table,0
+HS2017,HS2022,CER025,Toys,unchanged_1:1,0
+HS2017,HS2022,CER025,Toys,renumbered_1:1,0
+HS2017,HS2022,CER025,Toys,split_1:n,0
+HS2017,HS2022,CER025,Toys,merged_n:1,0
+HS2017,HS2022,CER025,Toys,complex_n:m,5
+HS2017,HS2022,CER025,Toys,not_in_table,0
+HS2017,HS2022,CER026,Wickerware,unchanged_1:1,11
+HS2017,HS2022,CER026,Wickerware,renumbered_1:1,0
+HS2017,HS2022,CER026,Wickerware,split_1:n,0
+HS2017,HS2022,CER026,Wickerware,merged_n:1,0
+HS2017,HS2022,CER026,Wickerware,complex_n:m,0
+HS2017,HS2022,CER026,Wickerware,not_in_table,0
+HS2017,HS2022,CER027,Yarn,unchanged_1:1,33
+HS2017,HS2022,CER027,Yarn,renumbered_1:1,0
+HS2017,HS2022,CER027,Yarn,split_1:n,0
+HS2017,HS2022,CER027,Yarn,merged_n:1,0
+HS2017,HS2022,CER027,Yarn,complex_n:m,0
+HS2017,HS2022,CER027,Yarn,not_in_table,0
+HS2017,HS2022,CER030,Books and publishing,unchanged_1:1,11
+HS2017,HS2022,CER030,Books and publishing,renumbered_1:1,1
+HS2017,HS2022,CER030,Books and publishing,split_1:n,0
+HS2017,HS2022,CER030,Books and publishing,merged_n:1,1
+HS2017,HS2022,CER030,Books and publishing,complex_n:m,0
+HS2017,HS2022,CER030,Books and publishing,not_in_table,0
+HS2017,HS2022,CER040,"Music, performing and visual arts",unchanged_1:1,19
+HS2017,HS2022,CER040,"Music, performing and visual arts",renumbered_1:1,0
+HS2017,HS2022,CER040,"Music, performing and visual arts",split_1:n,4
+HS2017,HS2022,CER040,"Music, performing and visual arts",merged_n:1,0
+HS2017,HS2022,CER040,"Music, performing and visual arts",complex_n:m,2
+HS2017,HS2022,CER040,"Music, performing and visual arts",not_in_table,0
+HS2017,HS2022,CER050,Architecture,unchanged_1:1,1
+HS2017,HS2022,CER050,Architecture,renumbered_1:1,0
+HS2017,HS2022,CER050,Architecture,split_1:n,0
+HS2017,HS2022,CER050,Architecture,merged_n:1,0
+HS2017,HS2022,CER050,Architecture,complex_n:m,0
+HS2017,HS2022,CER050,Architecture,not_in_table,0
+HS2017,HS2022,CER060,"Software, video games and recorded media",unchanged_1:1,0
+HS2017,HS2022,CER060,"Software, video games and recorded media",renumbered_1:1,0
+HS2017,HS2022,CER060,"Software, video games and recorded media",split_1:n,0
+HS2017,HS2022,CER060,"Software, video games and recorded media",merged_n:1,0
+HS2017,HS2022,CER060,"Software, video games and recorded media",complex_n:m,7
+HS2017,HS2022,CER060,"Software, video games and recorded media",not_in_table,0
+HS2017,HS2022,CER070,Cultural and natural heritage,unchanged_1:1,1
+HS2017,HS2022,CER070,Cultural and natural heritage,renumbered_1:1,0
+HS2017,HS2022,CER070,Cultural and natural heritage,split_1:n,2
+HS2017,HS2022,CER070,Cultural and natural heritage,merged_n:1,0
+HS2017,HS2022,CER070,Cultural and natural heritage,complex_n:m,0
+HS2017,HS2022,CER070,Cultural and natural heritage,not_in_table,0
