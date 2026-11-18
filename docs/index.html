@@ -4,245 +4,282 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Creative Goods Data Gaps</title>
-<meta name="description" content="Interactive dashboard on world trade in creative goods, 2002–2024, and on which economies are missing from the statistics. Data: UNCTADstat, UN M49.">
-<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+<meta name="description" content="Which economies are missing from creative economy trade statistics, how the creative-goods definition shifts with each HS revision, and what this means for creative economy indicators. Data: UNCTADstat, UN M49, UNSD.">
+<meta property="og:title" content="Who is missing from creative economy statistics?">
+<meta property="og:description" content="Least developed countries have no published creative-goods export value for over a third of years since 2002. An interactive analysis of UNCTADstat data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xiaoxiaoshikui.github.io/creative-goods-data-gaps/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='1' y='8' width='3' height='7' rx='1' fill='%232a78d6'/%3E%3Crect x='6.5' y='4' width='3' height='11' rx='1' fill='%232a78d6'/%3E%3Crect x='12' y='1' width='3' height='14' rx='1' fill='%23d4561f'/%3E%3C/svg%3E">
+<link rel="preload" href="data/dashboard.json" as="fetch" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
 <style>
 :root{
   color-scheme: light;
-  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
-  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10);
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --nodata:#e9e8e3;
-  --seq: #cde2fb,#9ec5f4,#6da7ec,#3987e5,#256abf,#184f95,#0d366b;
-  --accent:#2a78d6;
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#6f6d68;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,.10); --ref:#8f8d85;
+  --val:#2a78d6; --val2:#9ec5f4; --miss:#d4561f; --miss2:#f2b79a; --unlisted:#4a4946; --nodata:#cfccc4;
+  --seq: #9ec5f4,#6da7ec,#3987e5,#2a78d6,#256abf,#184f95,#0d366b;
+  --warm: #fbe3d6,#f6c3a6,#ef9c72,#e4733f,#d4561f,#a8400f,#7a2c08;
+  --accent:#1f66c1;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     color-scheme: dark;
-    --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
-    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --nodata:#2c2c2a;
-    --seq: #0d366b,#104281,#184f95,#256abf,#3987e5,#6da7ec,#b7d3f6;
-    --accent:#3987e5;
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#a3a29b;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10); --ref:#77756f;
+    --val:#3987e5; --val2:#184f95; --miss:#e8743f; --miss2:#7a3a1c; --unlisted:#8a8880; --nodata:#3a3936;
+    --seq: #184f95,#1c5cab,#256abf,#2a78d6,#3987e5,#6da7ec,#b7d3f6;
+    --warm: #4a2312,#6e3014,#963f18,#bf531f,#e4733f,#f19a6c,#f8c7aa;
+    --accent:#2a78d6;
   }
 }
 :root[data-theme="dark"]{
   color-scheme: dark;
-  --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
-  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10);
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --nodata:#2c2c2a;
-  --seq: #0d366b,#104281,#184f95,#256abf,#3987e5,#6da7ec,#b7d3f6;
-  --accent:#3987e5;
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#a3a29b;
+  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,.10); --ref:#77756f;
+  --val:#3987e5; --val2:#184f95; --miss:#e8743f; --miss2:#7a3a1c; --unlisted:#8a8880; --nodata:#3a3936;
+  --seq: #184f95,#1c5cab,#256abf,#2a78d6,#3987e5,#6da7ec,#b7d3f6;
+  --warm: #4a2312,#6e3014,#963f18,#bf531f,#e4733f,#f19a6c,#f8c7aa;
+  --accent:#2a78d6;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--page);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-header{padding:48px 0 24px}
-.eyebrow{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+header{padding:44px 0 20px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.eyebrow{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0}
+.eyebrow a{color:inherit}
 h1{font-size:clamp(28px,4.4vw,42px);line-height:1.12;margin:0 0 14px;font-weight:700;letter-spacing:-.01em;max-width:22ch}
-.lede{font-size:18px;color:var(--ink2);max-width:62ch;margin:0}
-.byline{font-size:14px;color:var(--muted);margin-top:16px}
+.lede{font-size:18px;color:var(--ink2);max-width:66ch;margin:0}
+.byline{font-size:14px;color:var(--muted);margin-top:14px}
 .byline a{color:inherit}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 8px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 6px}
 .tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
-.tile .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.tile .v{font-size:28px;font-weight:700;line-height:1.1}
+.tile .v .sw{width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:4px}
 .tile .l{font-size:13.5px;color:var(--ink2);margin-top:6px}
-section{padding:36px 0 8px;border-top:1px solid var(--grid);margin-top:28px}
+section{padding:34px 0 6px;border-top:1px solid var(--grid);margin-top:26px}
 h2{font-size:22px;margin:0 0 6px;line-height:1.25}
 .num{color:var(--muted);font-weight:600;margin-right:8px;font-variant-numeric:tabular-nums}
-.sub{color:var(--ink2);max-width:70ch;margin:0 0 16px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 16px 8px}
+.sub{color:var(--ink2);max-width:72ch;margin:0 0 16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 16px 10px}
 .card h3{font-size:15px;margin:0 0 2px}
 .card .note{font-size:13px;color:var(--muted);margin:0 0 6px}
 .controls{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:end;margin:0 0 10px}
 .controls label{max-width:100%;min-width:0;font-size:12.5px;color:var(--ink2);display:flex;flex-direction:column;gap:4px}
-select,input[type=range]{font:inherit;font-size:14px}
-select{max-width:100%;background:var(--surface);color:var(--ink);border:1px solid var(--axis);border-radius:8px;padding:6px 8px;min-width:160px}
+select{max-width:100%;font:inherit;font-size:14px;background:var(--surface);color:var(--ink);border:1px solid var(--axis);border-radius:8px;padding:6px 8px;min-width:160px}
+select:disabled{opacity:.55}
+input[type=range]{font:inherit}
 .seg{display:inline-flex;flex-wrap:wrap;max-width:100%;border:1px solid var(--axis);border-radius:8px;overflow:hidden}
 .seg button{font:inherit;font-size:13.5px;background:transparent;color:var(--ink2);border:0;padding:6px 12px;cursor:pointer}
 .seg button[aria-pressed=true]{background:var(--accent);color:#fff}
+button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .yr{display:flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums}
 .yr output{font-weight:600;color:var(--ink);min-width:3ch}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid2{display:grid;grid-template-columns:3fr 2fr;gap:16px}
 .chart{width:100%;height:380px}
-.chart.map{height:440px}
+.chart.map{height:460px}
 .chart.short{height:300px}
-.legend-note{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:4px 0 8px}
+.legend-note{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:6px 0 4px}
 .sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid var(--border)}
-.callout{border-left:3px solid var(--accent);padding:4px 0 4px 14px;margin:16px 0;color:var(--ink2);max-width:72ch}
-ol.recs{padding-left:20px;max-width:74ch}
+.sw.dot{border-radius:50%}
+.stat{display:grid;gap:10px;align-content:start}
+.stat .row{border-bottom:1px solid var(--grid);padding:8px 0}
+.stat .row:last-child{border-bottom:0}
+.stat .k{font-size:13px;color:var(--ink2)}
+.stat .v2{font-size:22px;font-weight:700}
+.stat .ci{font-size:13px;color:var(--muted)}
+.callout{border-left:3px solid var(--miss);padding:4px 0 4px 14px;margin:16px 0;color:var(--ink2);max-width:74ch}
+ol.recs{padding-left:20px;max-width:76ch}
 ol.recs li{margin:0 0 10px}
-details{margin-top:14px}
+details{margin-top:12px}
 summary{cursor:pointer;color:var(--ink2);font-size:14px}
 table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
 th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--grid)}
-th{color:var(--ink2);font-weight:600;cursor:pointer;position:sticky;top:0;background:var(--surface)}
+th{color:var(--ink2);font-weight:600;position:sticky;top:0;background:var(--surface)}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:2px solid var(--accent)}
 td.n,th.n{text-align:right}
-.tablebox{max-height:420px;overflow:auto;border:1px solid var(--border);border-radius:8px;background:var(--surface)}
-.method{font-size:14.5px;color:var(--ink2);max-width:76ch}
+.tablebox{max-height:420px;overflow:auto;border:1px solid var(--border);border-radius:8px;background:var(--surface);margin-top:8px}
+.method{font-size:14.5px;color:var(--ink2);max-width:78ch}
 .method code{font-size:13px}
-footer{padding:36px 0 56px;color:var(--muted);font-size:13.5px}
+.cite{font-size:13.5px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--ink2)}
+footer{padding:32px 0 56px;color:var(--muted);font-size:13.5px}
 a{color:var(--accent)}
-.theme-toggle{float:right;font:inherit;font-size:13px;background:transparent;color:var(--ink2);border:1px solid var(--axis);border-radius:8px;padding:4px 10px;cursor:pointer}
+.theme-toggle{font:inherit;font-size:13px;background:transparent;color:var(--ink2);border:1px solid var(--axis);border-radius:8px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+.err{color:var(--miss);font-weight:600}
 @media (max-width:820px){
   .tiles{grid-template-columns:1fr 1fr}
   .grid2{grid-template-columns:1fr}
-  .chart.map{height:320px}
 }
+@media (max-width:400px){ .seg button{font-size:13px;padding:6px 10px} .tile .v{font-size:24px} }
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <button class="theme-toggle" id="themeBtn" type="button" aria-label="Toggle dark mode">Theme</button>
-  <p class="eyebrow">Creative economy · trade statistics · data quality</p>
+  <div class="topbar">
+    <p class="eyebrow">Creative economy · trade statistics · data quality · <a href="ai/">Companion page: generative AI and creative work</a></p>
+    <button class="theme-toggle" id="themeBtn" type="button" aria-pressed="false">Dark mode</button>
+  </div>
   <h1>Who is missing from creative economy statistics?</h1>
-  <p class="lede">World exports of creative goods reached about US$709 billion in 2024. But the economies the creative-economy agenda most wants to support are the ones least visible in the data. This dashboard maps both the market and the gaps.</p>
-  <p class="byline">Yunxiang Guo · November 2026 · Data: UNCTADstat (creative goods, 2002–2024), UN M49 · <a href="https://github.com/xiaoxiaoshikui/creative-goods-data-gaps">Code and data on GitHub</a></p>
-  <div class="tiles" id="tiles"></div>
+  <p class="lede" id="lede">Least developed countries have no published creative-goods export value for about a third of the years since 2002, and some are not listed at all. This page shows which economies are missing, how the definition of creative goods shifts with each revision of the Harmonized System, and what this means for creative economy indicators.</p>
+  <p class="byline">Yunxiang Guo · Version 1.1 · Data accessed 18 November 2026 · Sources: UNCTADstat, UN M49, UN Statistics Division · <a href="https://github.com/xiaoxiaoshikui/creative-goods-data-gaps">Code and data</a></p>
+  <div class="tiles" id="tiles" aria-live="polite"></div>
 </header>
 
 <section id="s1">
-  <h2><span class="num">01</span>The market has shifted to developing economies, mostly to China</h2>
-  <p class="sub">Creative goods exports by origin, US$ billion at current prices. Developing economies overtook developed ones in 2011. Without China, their share has stayed between 23% and 26% of world exports since 2002.</p>
-  <div class="card">
-    <div class="controls">
-      <div class="seg" role="group" aria-label="Measure">
-        <button type="button" data-trend="abs" aria-pressed="true">US$ billion</button>
-        <button type="button" data-trend="share" aria-pressed="false">Share of world (%)</button>
-      </div>
+  <h2><span class="num">01</span>Least developed countries and small island States have the most gaps</h2>
+  <p class="sub">Share of years from 2002 to 2023 in which no creative-goods export value is published, one dot per economy. Economies that UNCTADstat does not list as reporters at all count as missing in every year. Groups follow UN M49; an economy can belong to more than one.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Share of years with no published value, by group</h3>
+      <p class="note">Each dot is one economy; the vertical line is the group median</p>
+      <div id="gapDots" class="chart" role="img"></div>
+      <div class="legend-note"><span><span class="sw dot" style="background:var(--miss)"></span>Listed, some years missing</span><span><span class="sw dot" style="background:var(--unlisted)"></span>Not listed at all</span><span><span class="sw dot" style="background:var(--val)"></span>No years missing</span></div>
     </div>
-    <div id="trend" class="chart" role="img" aria-label="Line chart of creative goods exports 2002 to 2024 for developed economies, developing economies excluding China, and China"></div>
-    <p class="note">2024 values may be revised as more economies report.</p>
+    <div class="card stat" id="statBox"></div>
   </div>
+  <div class="callout" id="gapCallout"></div>
+  <details>
+    <summary>Table: coverage for every economy</summary>
+    <div class="tablebox"><table id="covTable"><thead><tr>
+      <th data-k="name" aria-sort="none"><button type="button">Economy</button></th><th data-k="region" aria-sort="none"><button type="button">Region</button></th><th data-k="grp" aria-sort="none"><button type="button">Group</button></th>
+      <th data-k="years_reported" class="n" aria-sort="none"><button type="button">Years with data</button></th><th data-k="gap_pct" class="n" aria-sort="descending"><button type="button">Years missing %</button></th><th data-k="last_year" class="n" aria-sort="none"><button type="button">Latest year</button></th>
+    </tr></thead><tbody></tbody></table></div>
+    <p class="note" style="font-size:13px;color:var(--muted)"><a href="data/coverage.csv">Download as CSV</a></p>
+  </details>
 </section>
 
 <section id="s2">
-  <h2><span class="num">02</span>Where creative goods are exported from</h2>
-  <p class="sub">Choose a year, a creative-goods category and a measure. Economies in grey have no value published for that year. That grey is the subject of section 04.</p>
+  <h2><span class="num">02</span>The gaps have widened since 2017</h2>
+  <p class="sub">Number of economies with no published creative-goods export value in each year. Some values for 2022 and 2023 may still arrive, and 2024 reporting is incomplete.</p>
   <div class="card">
-    <div class="controls">
-      <label>Category<select id="mapCat"></select></label>
-      <label>Measure<select id="mapMeasure">
-        <option value="v">Exports, US$ million</option>
-        <option value="pm">Share of the economy's merchandise exports (%)</option>
-      </select></label>
-      <label>Year<span class="yr"><input type="range" id="mapYear" min="2002" max="2024" value="2023" step="1" aria-label="Year"><output id="mapYearOut">2023</output></span></label>
-    </div>
-    <div id="map" class="chart map" role="img" aria-label="World map of creative goods exports by economy"></div>
-    <div class="legend-note"><span><span class="sw" style="background:var(--nodata)"></span>No value published</span><span>Colour scale is logarithmic for US$ values</span></div>
+    <div id="missYear" class="chart short" role="img"></div>
+    <div class="legend-note"><span><span class="sw" style="background:var(--miss)"></span>Economies with no value</span><span><span class="sw" style="background:transparent;border:1.5px dashed var(--miss)"></span>2024, reporting still incomplete</span></div>
+    <details><summary>Show data</summary><div class="tablebox" id="missYearTable"></div></details>
   </div>
 </section>
 
 <section id="s3">
-  <h2><span class="num">03</span>What is traded: mostly design goods, not culture in the narrow sense</h2>
-  <p class="sub">Share of each category in creative goods exports, 2023. Crafts and design goods (jewellery, interior goods, fashion accessories, toys) make up most of the total in every group. Categories closer to cultural content, such as books, audiovisual and music, are small in goods trade. Much of their value now moves as services and digital flows, which these statistics do not cover.</p>
+  <h2><span class="num">03</span>Where the gaps are</h2>
+  <p class="sub">Switch between the share of years missing and the value of exports. Small island States are shown as dots so that they stay visible.</p>
   <div class="card">
     <div class="controls">
-      <div class="seg" role="group" aria-label="Group" id="compSeg"></div>
+      <div class="seg" role="group" aria-label="Map layer" id="mapSeg">
+        <button type="button" data-layer="gap" aria-pressed="true">Years missing</button>
+        <button type="button" data-layer="exp" aria-pressed="false">Exports</button>
+      </div>
+      <label id="catWrap">Category<select id="mapCat"></select></label>
+      <label id="measWrap">Measure<select id="mapMeasure">
+        <option value="v">Exports, $ million</option>
+        <option value="pm">Share of merchandise exports (%), all creative goods</option>
+      </select></label>
+      <label id="yearWrap">Year<span class="yr"><input type="range" id="mapYear" min="2002" max="2024" value="2023" step="1" aria-label="Year"><output id="mapYearOut">2023</output></span></label>
     </div>
-    <div id="comp" class="chart short" role="img" aria-label="Bar chart of creative goods export composition by category"></div>
+    <div id="map" class="chart map" role="img"></div>
+    <div class="legend-note" id="mapLegend"></div>
   </div>
 </section>
 
 <section id="s4">
-  <h2><span class="num">04</span>Who is missing: the data gap follows the development gap</h2>
-  <p class="sub">For each economy, the share of years between 2002 and 2023 with no creative-goods export value published, and whether a 2024 value is available yet. Groups follow the UN M49 classification; an economy can belong to more than one.</p>
+  <h2><span class="num">04</span>The definition itself moves with each HS revision</h2>
+  <p class="sub">UNCTAD defines creative goods as a list of 6-digit Harmonized System (HS) codes, and the HS is revised about every five years. Using the UN Statistics Division correlation tables, each creative code is traced to the next edition. A code that is split, merged or re-linked is a point where a time series can break.</p>
   <div class="grid2">
     <div class="card">
-      <h3>Average share of years with no data, 2002–2023</h3>
-      <p class="note">Per cent of years, mean across economies in each group</p>
-      <div id="gapBars" class="chart short" role="img" aria-label="Bar chart of average share of years with missing data by group"></div>
+      <h3>Creative HS codes not kept one-to-one, per revision</h3>
+      <p class="note">Count of 6-digit codes in UNCTAD's list for the earlier edition</p>
+      <div id="hsPairs" class="chart short" role="img"></div>
+      <div class="legend-note"><span><span class="sw" style="background:var(--miss)"></span>Split, merged or re-linked</span><span><span class="sw" style="background:var(--miss2)"></span>Code continues, partial link to a new heading</span></div>
     </div>
     <div class="card">
-      <h3>Economies with no 2024 value published yet</h3>
-      <p class="note">Per cent of economies in each group</p>
-      <div id="latestBars" class="chart short" role="img" aria-label="Bar chart of share of economies with no 2024 data by group"></div>
-    </div>
-  </div>
-  <div class="card" style="margin-top:16px">
-    <h3>Years with a published value, 2002–2023</h3>
-    <p class="note">Darker means more complete. Hover for each economy's record.</p>
-    <div id="covMap" class="chart map" role="img" aria-label="World map of the number of years with published creative goods data per economy"></div>
-  </div>
-  <div class="card" style="margin-top:16px">
-    <h3>Economies with no published value, by year</h3>
-    <p class="note">Count of current economies listed by UNCTADstat with no creative-goods export value for that year</p>
-    <div id="missYear" class="chart short" role="img" aria-label="Column chart of economies with missing data per year"></div>
-  </div>
-  <div class="callout" id="gapCallout"></div>
-  <details>
-    <summary>Table: data coverage for every economy</summary>
-    <div class="tablebox"><table id="covTable"><thead><tr>
-      <th data-k="name">Economy</th><th data-k="region">Region</th><th data-k="grp">Group</th>
-      <th data-k="years_reported" class="n">Years with data</th><th data-k="gap_pct" class="n">Gap %</th><th data-k="last_year" class="n">Latest year</th>
-    </tr></thead><tbody></tbody></table></div>
-  </details>
-</section>
-
-<section id="s4b">
-  <h2><span class="num">05</span>The definition itself moves every five years</h2>
-  <p class="sub">UNCTAD defines creative goods as a list of 6-digit Harmonized System (HS) codes. The World Customs Organization revises the HS about every five years, so the list has to be re-mapped each time. The chart counts how each creative code from one edition maps to the next, using the UN Statistics Division correlation tables. Any code that is not kept one-to-one is a point where a time series can break.</p>
-  <div class="grid2">
-    <div class="card">
-      <h3>Creative HS codes by type of change, per revision</h3>
-      <p class="note">Number of 6-digit codes in UNCTAD's creative-goods list for the earlier edition</p>
-      <div id="hsPairs" class="chart short" role="img" aria-label="Stacked bar chart of creative goods HS codes kept, split or merged, and complex, per HS revision"></div>
-      <div class="legend-note"><span><span class="sw" style="background:var(--axis)"></span>Kept 1:1</span><span><span class="sw" style="background:var(--s1)"></span>Renumbered, split or merged</span><span><span class="sw" style="background:var(--s2)"></span>Complex (many-to-many)</span></div>
-    </div>
-    <div class="card">
-      <h3>Share of codes changed in HS 2017 → 2022, by category</h3>
-      <p class="note">Per cent of the category's codes not kept one-to-one</p>
-      <div id="hsCats" class="chart short" role="img" aria-label="Bar chart of share of creative goods HS codes changed in the 2022 revision by category"></div>
+      <h3>HS 2017 → 2022, by category</h3>
+      <p class="note">Codes changed out of codes in the category</p>
+      <div id="hsCats" class="chart short" role="img"></div>
     </div>
   </div>
   <div class="callout" id="hsCallout"></div>
 </section>
 
 <section id="s5">
-  <h2><span class="num">06</span>What this means for creative-economy measurement</h2>
-  <ol class="recs">
-    <li><strong>Read aggregates for small and least developed economies with care.</strong> In UNCTADstat the LDC total is flagged as estimated for every year it is published, and it is missing altogether for 2002, 2003 and 2024. Changes over time can reflect who reported rather than what was traded.</li>
-    <li><strong>Mirror data can close part of the gap.</strong> When an economy does not report, its partners' imports from it are usually still recorded. A partner-reported series for non-reporting economies, flagged as such, would put many of the grey economies back on the map.</li>
-    <li><strong>Publish the concordance with the indicator.</strong> Video games, recorded media and toys were entirely re-mapped in HS 2022, and UNCTAD moved works of art over 100 years old from visual arts to cultural heritage. A code-level concordance published alongside each release would let users see which breaks in a series come from the classification rather than from trade.</li>
-    <li><strong>Goods are only part of the creative economy.</strong> Crafts and design dominate goods trade, while music, audiovisual and publishing increasingly move as services and digital flows. Indicators of the effects of AI and digital platforms will need sources beyond customs data, such as platform and marketplace data, with the same attention to coverage.</li>
-  </ol>
+  <h2><span class="num">05</span>What the available data show</h2>
+  <p class="sub">Creative goods exports by origin, $ billion at current prices. Developing economies overtook developed ones in 2011, largely because of China. Without China, developing economies' share has stayed between 23% and 26% since 2002.</p>
+  <div class="card">
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Measure" id="trendSeg">
+        <button type="button" data-trend="abs" aria-pressed="true">$ billion</button>
+        <button type="button" data-trend="share" aria-pressed="false">Share of world (%)</button>
+      </div>
+    </div>
+    <div id="trend" class="chart" role="img"></div>
+    <p class="note">The 2024 point (open circle) is provisional. Group totals are UNCTAD estimates.</p>
+    <details><summary>Show data</summary><div class="tablebox" id="trendTable"></div></details>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3 id="compTitle">Crafts and design goods make up most creative goods exports in every group</h3>
+    <p class="note">Share of each category in creative goods exports, 2023</p>
+    <div class="controls"><div class="seg" role="group" aria-label="Group" id="compSeg"></div></div>
+    <div id="comp" class="chart short" role="img"></div>
+  </div>
 </section>
 
 <section id="s6">
+  <h2><span class="num">06</span>What this means for creative economy measurement</h2>
+  <ol class="recs">
+    <li><strong>Read totals for small and least developed economies with care.</strong> Group totals in UNCTADstat are estimates, and the LDC total is not published for 2002, 2003 or 2024. A change over time can reflect which economies reported rather than what was traded.</li>
+    <li><strong>Partner data could fill part of the gap.</strong> When an economy publishes no value, its partners' imports from it are usually still recorded. A partner-reported series, clearly flagged as such, could put some of the missing economies back on the map. Its accuracy for small exporters would need to be tested first.</li>
+    <li><strong>Publish the concordance with the indicator.</strong> In HS 2022, every code for video games, recorded media and toys kept its number but gained a partial link to new headings for e-waste (85.49) or display modules (85.24), and UNCTAD moved works of art over 100 years old from visual arts to cultural heritage. A code-level concordance released with each update would show which breaks in a series come from the classification rather than from trade.</li>
+    <li><strong>Goods are only part of the creative economy.</strong> Music, audiovisual and publishing increasingly move as services and digital flows. Indicators of the effects of AI and digital platforms will need other sources, such as platform and marketplace data, held to the same standard of coverage. The <a href="ai/">companion page</a> looks at one such question: which creative occupations are exposed to generative AI.</li>
+  </ol>
+</section>
+
+<section id="s7">
   <h2><span class="num">07</span>Method and sources</h2>
   <div class="method">
-    <p><strong>Trade data.</strong> UNCTADstat, “Creative goods: value” (<a href="https://unctadstat.unctad.org/datacentre/dataviewer/US.CreativeGoodsValue">US.CreativeGoodsValue</a>), bulk download accessed 18 November 2026. Exports to the world, US$ at current prices, 2002–2024. UNCTAD defines creative goods as a list of Harmonized System product codes grouped into seven categories, with crafts and design split into seven sub-groups.</p>
-    <p><strong>Groups.</strong> UN Statistics Division, <a href="https://unstats.un.org/unsd/methodology/m49/overview/">Standard country or area codes (M49)</a>, for region and for LDC, LLDC and SIDS membership. Development-status totals (developed, developing, developing excluding China) are UNCTADstat's own aggregates.</p>
-    <p><strong>Coverage measure.</strong> An economy has a gap in a year when UNCTADstat lists it but publishes no export value. Historical entities that no longer exist (for example Netherlands Antilles, Serbia and Montenegro) are excluded. Economies created after 2002 (Curaçao, Sint Maarten, South Sudan, Serbia, Montenegro, Bonaire, Sint Eustatius and Saba) are counted from their first year. 2024 is shown separately because reporting for the latest year is still incomplete. A missing value means that no figure is published. It does not mean that the economy had no creative trade.</p>
-    <p><strong>HS revisions.</strong> UNCTADstat, <a href="https://unctadstat.unctad.org/EN/Classifications.html">creative product groupings</a> for HS 2002, 2007, 2012, 2017 and 2022, matched against the UNSD <a href="https://unstats.un.org/unsd/classifications/Econ/">HS correlation tables</a>. Each creative code is classed as kept, renumbered, split (1:n), merged (n:1) or complex (n:m). The count is of codes, not trade value. Many HS 2022 “complex” cases are small partial links to new headings for e-waste (85.49) and display modules (85.24), and in most of them the original code still exists.</p>
-    <p><strong>Reproduce.</strong> <code>scripts/download.sh</code> fetches both sources and <code>scripts/build_continuity.py</code> and <code>scripts/build_data.py</code> (Python, DuckDB, pandas) builds <code>docs/data/dashboard.json</code>. Charts use Plotly.js. <a href="data/coverage.csv">Download the coverage table (CSV)</a>.</p>
+    <p><strong>Trade data.</strong> UNCTADstat, “Creative goods: value” (<a href="https://unctadstat.unctad.org/datacentre/dataviewer/US.CreativeGoodsValue">US.CreativeGoodsValue</a>), bulk download accessed 18 November 2026 (SHA-256 recorded in the repository). Exports to the world in United States dollars ($) at current prices, 2002–2024.</p>
+    <p><strong>Groups.</strong> UN Statistics Division, <a href="https://unstats.un.org/unsd/methodology/m49/overview/">Standard country or area codes (M49)</a>, for regions and for LDC, LLDC and SIDS membership (current lists). Development-status totals are UNCTADstat's own aggregates.</p>
+    <p><strong>Coverage measure.</strong> For each current economy and year from 2002 to 2023, the year counts as missing when UNCTADstat publishes no value: the row is marked “Not publishable”, carries no value, or is absent. Rows marked “Not applicable” (for example, before an economy existed) are excluded. Former codes are joined to current ones (Sudan before 2012, Indonesia in 2002); entities that no longer exist are excluded. Nine sovereign States that appear only as trading partners, never as reporters, are counted as missing in every year: Chad, Haiti, Somalia and South Sudan (LDCs), and Equatorial Guinea, Turkmenistan, the Democratic People's Republic of Korea, the Marshall Islands and Nauru. Group differences are reported with 95% intervals from a bootstrap over economies and a one-sided permutation test. A missing value means that no figure is published. It does not mean that the economy had no creative trade, and UNCTAD's group totals include estimates for some of these economies.</p>
+    <p><strong>HS revisions.</strong> UNCTADstat <a href="https://unctadstat.unctad.org/EN/Classifications.html">creative product groupings</a> for HS 2002, 2007, 2012, 2017 and 2022, matched against the UNSD <a href="https://unstats.un.org/unsd/classifications/Econ/">HS correlation tables</a>. Each code is classed as kept, renumbered, split (1:n), merged (n:1) or complex (n:m). Complex cases where the code itself continues and only gains a partial link to a new heading are shown separately. Counts are of codes, not trade value. <a href="https://github.com/xiaoxiaoshikui/creative-goods-data-gaps/blob/main/data/hs/SOURCES.md">Sources and checksums</a>.</p>
+    <p><strong>Reproduce.</strong> <code>scripts/download.sh</code>, then <code>scripts/build_continuity.py</code> and <code>scripts/build_data.py</code> (Python, DuckDB, pandas) rebuild every number on this page. Charts use Plotly.js. Code: MIT licence; derived tables: CC BY 4.0. Source data remain subject to the providers' terms of use.</p>
+    <p><strong>How to cite.</strong></p>
+    <p class="cite">Guo, Y. (2026). <em>Who is missing from creative economy statistics?</em> Interactive dashboard, version 1.1. https://xiaoxiaoshikui.github.io/creative-goods-data-gaps/ (data: UNCTADstat, accessed 18 November 2026).</p>
   </div>
 </section>
 
 <footer>
-  Independent analysis by Yunxiang Guo, November 2026, using public data. It is not an official publication of UNCTAD or any other organization. Errors are the author's.
+  Independent analysis by Yunxiang Guo, November 2026, based on public data. It is not an official publication of UNCTAD, WIPO or any other organization, and it was prepared outside the author's work duties. Errors are the author's.
 </footer>
 </div>
 
 <script>
-(async function(){
-const D = await (await fetch('data/dashboard.json')).json();
-const Y = D.meta.years;
-const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+document.addEventListener('DOMContentLoaded', async () => {
+let D;
+try { D = await (await fetch('data/dashboard.json')).json(); }
+catch(e){ document.getElementById('tiles').innerHTML='<p class="err">Data could not be loaded. Please reload the page.</p>'; return; }
+if (typeof Plotly === 'undefined'){ document.getElementById('tiles').insertAdjacentHTML('beforeend','<p class="err">The charting library could not be loaded.</p>'); }
+const Y = D.meta.years, root = document.documentElement;
+const css = n => getComputedStyle(root).getPropertyValue(n).trim();
 const fmt = (x,d=0) => x==null?'–':x.toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d});
-const iY = y => Y.indexOf(y);
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const narrow = () => document.querySelector('.wrap').clientWidth < 600;
+const CFG = {displayModeBar:false, responsive:true};
+const G = Object.fromEntries(D.coverage_groups.map(g=>[g.group,g]));
+const L = G['Least developed countries'], S = G['Small island developing States'], O = G['All other economies'], T = D.ldc_test;
+const MY = Object.fromEntries(D.missing_by_year.map(m=>[m.year,m]));
+const absent = D.coverage.filter(r=>r.absent);
 
 // ---------- theme ----------
-const root = document.documentElement;
+function isDark(){ return getComputedStyle(root).colorScheme.includes('dark'); }
+function syncThemeBtn(){ const b=document.getElementById('themeBtn'); const d=isDark(); b.textContent = d?'Light mode':'Dark mode'; b.setAttribute('aria-pressed', d); }
 try{ const t = localStorage.getItem('cgd-theme'); if(t) root.dataset.theme=t; }catch(e){}
 document.getElementById('themeBtn').onclick = () => {
-  const dark = getComputedStyle(root).colorScheme.includes('dark');
-  root.dataset.theme = dark ? 'light' : 'dark';
+  root.dataset.theme = isDark() ? 'light' : 'dark';
   try{ localStorage.setItem('cgd-theme', root.dataset.theme); }catch(e){}
-  renderAll();
+  syncThemeBtn(); renderAll();
 };
-matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ()=>{syncThemeBtn(); renderAll();});
+syncThemeBtn();
 
 function base(extra={}){
   return Object.assign({
@@ -255,155 +292,204 @@ function base(extra={}){
     showlegend:false,
   }, extra);
 }
-const CFG = {displayModeBar:false, responsive:true};
-const narrow = () => document.querySelector('.wrap').clientWidth < 600;
-const shortCat = {'Audiovisual, multimedia & photography':'Audiovisual','Crafts & design goods':'Crafts & design','Books & publishing':'Books','Music, performing & visual arts':'Music & arts','Software, video games & recorded media':'Software & games','Cultural & natural heritage':'Heritage','Architecture':'Architecture','Audiovisual, multimedia and photography':'Audiovisual','Music, performing and visual arts':'Music & arts','Software, video games and recorded media':'Software & games','Cultural and natural heritage':'Heritage','Books and publishing':'Books'};
-const lab = t => narrow() ? (shortCat[t]||t) : t;
+function dataTable(el, head, rows){
+  el.innerHTML = `<table><thead><tr>${head.map((h,i)=>`<th${i?' class="n"':''}>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((c,i)=>`<td${i?' class="n"':''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+}
+const label = (id, text) => document.getElementById(id).setAttribute('aria-label', text);
 
 // ---------- tiles ----------
-const T = D.trend, last = Y.length-1;
-const w24 = T['World'][last], dv24 = T['Developing economies'][last], dx24 = T['Developing economies excl. China'][last];
-const lg = Object.fromEntries(D.coverage_groups.map(g=>[g.group,g]));
-const miss24 = D.missing_by_year.find(m=>m.year===2024);
+const w24 = D.trend['World'][Y.length-1];
 document.getElementById('tiles').innerHTML = [
-  [`$${fmt(w24)}bn`, 'world creative goods exports, 2024'],
-  [`${fmt(dv24/w24*100)}%`, `from developing economies; ${fmt(dx24/w24*100)}% without China`],
-  [`${fmt(lg['Least developed countries'].mean_gap_pct/lg['All other economies'].mean_gap_pct,0)}×`, 'more missing years for LDCs than for other economies'],
-  [`${miss24.missing} of ${miss24.listed}`, 'economies with no 2024 value yet'],
+  [`<span class="sw dot" style="background:var(--miss)"></span>${fmt(L.mean_gap_pct)}% vs ${fmt(O.mean_gap_pct)}%`, 'share of years with no published value, least developed countries vs other economies, 2002–2023'],
+  [`<span class="sw dot" style="background:var(--unlisted)"></span>${absent.length}`, `sovereign States not listed as reporters at all, including ${absent.filter(r=>r.ldc).length} least developed countries`],
+  [`<span class="sw dot" style="background:var(--miss)"></span>${MY[2017].missing} → ${MY[2023].missing}`, 'economies with no published value, 2017 → 2023'],
+  [`$${fmt(w24)} billion`, 'world creative goods exports, 2024 (UNCTAD estimate)'],
 ].map(([v,l])=>`<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
+document.getElementById('lede').textContent =
+  `Least developed countries have no published creative-goods export value for ${fmt(L.mean_gap_pct)}% of years since 2002 on average, against ${fmt(O.mean_gap_pct)}% for other economies, and ${absent.filter(r=>r.ldc).length} of them are not listed at all. This page shows which economies are missing, how the definition of creative goods shifts with each revision of the Harmonized System, and what this means for creative economy indicators.`;
 
-// ---------- 01 trend ----------
-let trendMode='abs';
-document.querySelectorAll('[data-trend]').forEach(b=>b.onclick=()=>{
-  trendMode=b.dataset.trend;
-  document.querySelectorAll('[data-trend]').forEach(x=>x.setAttribute('aria-pressed', x===b));
-  renderTrend();
-});
-function renderTrend(){
-  const S = [['Developed economies','--s1'],['Developing economies excl. China','--s2'],['China','--s3']];
-  const traces = S.map(([k,c])=>{
-    const y = trendMode==='abs' ? T[k] : T[k].map((v,i)=>v==null?null:v/T['World'][i]*100);
-    return {x:Y, y, name:k, type:'scatter', mode:'lines', line:{color:css(c), width:2},
-      hovertemplate: trendMode==='abs' ? `${k}: $%{y:,.1f}bn<extra></extra>` : `${k}: %{y:.1f}%<extra></extra>`};
-  });
-  const nm = {'Developed economies':'Developed','Developing economies excl. China': narrow()?'Dev. excl.<br>China':'Developing excl. China','China':'China'};
-  const ann = S.map(([k,c],i)=>({x:Y[last], y:traces[i].y[last], text:nm[k],
-    xanchor:'left', xshift:6, showarrow:false, font:{color:css('--ink2'), size:12}}));
-  Plotly.react('trend', traces, base({margin:{l:44,r:narrow()?84:150,t:12,b:36}, hovermode:'x unified',
-    xaxis:{range:[2001.5,2024.5], gridcolor:'rgba(0,0,0,0)', linecolor:css('--axis'), dtick:narrow()?5:2},
-    yaxis:{gridcolor:css('--grid'), zeroline:false, rangemode:'tozero', ticksuffix: trendMode==='abs'?'':'%', tickprefix: trendMode==='abs'?'$':''},
-    annotations:ann, showlegend:false}), CFG);
-}
-
-// ---------- 02 map ----------
-const catSel = document.getElementById('mapCat');
-catSel.innerHTML = Object.entries(D.meta.categories).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
-['mapCat','mapMeasure','mapYear'].forEach(id=>document.getElementById(id).addEventListener('input',renderMap));
-function seqScale(){ const s=css('--seq').split(',').map(x=>x.trim()); return s.map((c,i)=>[i/(s.length-1),c]); }
-function renderMap(){
-  const yr=+document.getElementById('mapYear').value; document.getElementById('mapYearOut').textContent=yr;
-  const cat=catSel.value, meas=document.getElementById('mapMeasure').value, i=iY(yr);
-  if(meas==='pm' && cat!=='CER000'){ catSel.value='CER000'; }
-  const loc=[], z=[], txt=[];
-  for(const [code,p] of Object.entries(D.panel)){
-    const e=D.economies[code]; if(!e||!e.iso3) continue;
-    const v = meas==='v' ? p.v[catSel.value][i] : p.pm[i];
-    if(v==null || v<=0) continue;
-    loc.push(e.iso3); z.push(meas==='v'?Math.log10(v):v);
-    txt.push(meas==='v' ? `<b>${e.name}</b><br>${D.meta.categories[catSel.value]}, ${yr}<br>US$ ${fmt(v,v<10?1:0)} million` : `<b>${e.name}</b><br>${yr}: ${fmt(v,2)}% of merchandise exports`);
-  }
-  const ticks = meas==='v' ? {tickvals:[-1,0,1,2,3,4,5], ticktext:['0.1','1','10','100','1k','10k','100k']} : {};
-  Plotly.react('map', [{type:'choropleth', locations:loc, z, text:txt, hovertemplate:'%{text}<extra></extra>',
-    colorscale:seqScale(), marker:{line:{color:css('--surface'), width:.5}},
-    colorbar:Object.assign({thickness:10, len:.7, outlinewidth:0, tickfont:{color:css('--ink2')}, title:{text: meas==='v'?'US$ m':'%', font:{color:css('--ink2')}}}, ticks)}],
-    base({margin:{l:0,r:0,t:0,b:0}, geo:geo()}), CFG);
-}
-function geo(){ return {showframe:false, showcoastlines:false, showcountries:true, countrycolor:css('--surface'),
-  showland:true, landcolor:css('--nodata'), bgcolor:'rgba(0,0,0,0)', projection:{type:'natural earth'},
-  lataxis:{range:[-58,85]}}; }
-
-// ---------- 03 composition ----------
-const compGroups=['World','Developed economies','Developing economies','Least developed countries','Small island developing States'];
-const compShort={'World':'World','Developed economies':'Developed','Developing economies':'Developing','Least developed countries':'LDCs','Small island developing States':'SIDS'};
-let compG='World';
-document.getElementById('compSeg').innerHTML = compGroups.map(g=>`<button type="button" data-g="${g}" aria-pressed="${g===compG}">${compShort[g]}</button>`).join('');
-document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{compG=b.dataset.g;document.querySelectorAll('[data-g]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderComp();});
-function renderComp(){
-  const c=D.composition_2023[compG]; const tot=c.CER000;
-  const keys=Object.keys(D.meta.categories).filter(k=>k!=='CER000');
-  const rows=keys.map(k=>[D.meta.categories[k], c[k]==null?0:c[k]/tot*100, c[k]]).sort((a,b)=>a[1]-b[1]);
-  Plotly.react('comp',[{type:'bar', orientation:'h', y:rows.map(r=>lab(r[0])), x:rows.map(r=>r[1]),
-    marker:{color:css('--s1'), cornerradius:4}, text:rows.map(r=>r[1]>=1?fmt(r[1],0)+'%':'<1%'), textposition:'outside', cliponaxis:false,
-    textfont:{color:css('--ink2')},
-    customdata:rows.map(r=>r[2]), hovertemplate:'%{y}<br>%{x:.1f}% · US$ %{customdata:,.2f}bn<extra></extra>'}],
-    base({margin:{l:narrow()?100:250,r:40,t:4,b:30}, bargap:.35, xaxis:{gridcolor:css('--grid'), ticksuffix:'%', zeroline:false, range:[0,100]}, yaxis:{automargin:true, gridcolor:'rgba(0,0,0,0)'}}), CFG);
-}
-
-// ---------- 04 gaps ----------
+// ---------- 01 gap dots ----------
 const gOrder=['Least developed countries','Small island developing States','Landlocked developing countries','All other economies'];
 const gShort={'Least developed countries':'LDCs','Small island developing States':'SIDS','Landlocked developing countries':'LLDCs','All other economies':'All other'};
-function gapBar(id, key){
-  const g=gOrder.map(k=>lg[k]);
-  Plotly.react(id,[{type:'bar', x:g.map(r=>`${gShort[r.group]}<br>n=${r.n}`), y:g.map(r=>r[key]),
-    marker:{color:g.map(r=>r.group==='All other economies'?css('--axis'):css('--s1')), cornerradius:4},
-    text:g.map(r=>fmt(r[key],0)+'%'), textposition:'outside', cliponaxis:false, textfont:{color:css('--ink')},
-    hovertemplate:'%{x}: %{y:.1f}%<extra></extra>'}],
-    base({margin:{l:40,r:8,t:16,b:44}, bargap:.45, xaxis:{tickangle:0, gridcolor:'rgba(0,0,0,0)', linecolor:css('--axis')}, yaxis:{gridcolor:css('--grid'), ticksuffix:'%', zeroline:false, rangemode:'tozero'}}), CFG);
+const inGroup = (r,g) => g==='Least developed countries'?r.ldc : g==='Small island developing States'?r.sids : g==='Landlocked developing countries'?r.lldc : !(r.ldc||r.sids||r.lldc);
+function renderGapDots(){
+  const traces=[]; const cats=gOrder.map(g=>`${gShort[g]} (n=${G[g].n})`);
+  // deterministic jitter so dots do not overlap exactly
+  const jit = s => { let h=0; for(const c of s) h=(h*31+c.charCodeAt(0))>>>0; return ((h%1000)/1000-.5)*.5; };
+  gOrder.forEach((g,gi)=>{
+    const rs=D.coverage.filter(r=>inGroup(r,g));
+    traces.push({type:'scatter', mode:'markers', x:rs.map(r=>r.gap_pct), y:rs.map(r=>gi+jit(r.code)),
+      marker:{size:8, color:rs.map(r=>r.absent?css('--unlisted'):r.gap_pct>0?css('--miss'):css('--val')), line:{color:css('--surface'),width:1}},
+      text:rs.map(r=>`<b>${esc(r.name)}</b><br>${r.absent?'Not listed as a reporter':`${r.gap_years} of ${r.years_listed} years missing`}`),
+      hovertemplate:'%{text}<extra></extra>'});
+  });
+  const shapes=gOrder.map((g,gi)=>({type:'line', x0:G[g].median_gap_pct, x1:G[g].median_gap_pct, y0:gi-.32, y1:gi+.32, line:{color:css('--ink'), width:2}}));
+  Plotly.react('gapDots', traces, base({margin:{l:narrow()?78:110,r:12,t:6,b:36}, shapes, hovermode:'closest',
+    xaxis:{range:[-3,103], ticksuffix:'%', gridcolor:css('--grid'), zeroline:false, title:{text:'Share of years with no published value', font:{size:12}}},
+    yaxis:{tickvals:[0,1,2,3], ticktext:cats, autorange:'reversed', gridcolor:'rgba(0,0,0,0)', zeroline:false}}), CFG);
+  label('gapDots', 'Dot plot. Mean share of years missing: ' + gOrder.map(g=>`${gShort[g]} ${fmt(G[g].mean_gap_pct)}% (median ${fmt(G[g].median_gap_pct)}%)`).join('; '));
 }
-function renderCovMap(){
-  const c=D.coverage.filter(r=>r.iso3);
-  Plotly.react('covMap',[{type:'choropleth', locations:c.map(r=>r.iso3), z:c.map(r=>r.years_reported/r.years_listed*22),
-    zmin:0, zmax:22, colorscale:seqScale(), marker:{line:{color:css('--surface'),width:.5}},
-    text:c.map(r=>`<b>${r.name}</b><br>${r.years_reported} of ${r.years_listed} years with data<br>Latest year: ${r.last_year??'none'}${[r.ldc?'LDC':'',r.sids?'SIDS':'',r.lldc?'LLDC':''].filter(Boolean).length?'<br>'+[r.ldc?'LDC':'',r.sids?'SIDS':'',r.lldc?'LLDC':''].filter(Boolean).join(' · '):''}`),
-    hovertemplate:'%{text}<extra></extra>',
-    colorbar:{thickness:10,len:.7,outlinewidth:0,tickvals:[0,11,22],ticktext:['0%','50%','100%'],tickfont:{color:css('--ink2')},title:{text:'years',font:{color:css('--ink2')}}}}],
-    base({margin:{l:0,r:0,t:0,b:0}, geo:geo()}), CFG);
-}
-function renderMissYear(){
-  const m=D.missing_by_year;
-  Plotly.react('missYear',[{type:'bar', x:m.map(r=>r.year), y:m.map(r=>r.missing),
-    marker:{color:m.map(r=>r.year===2024?css('--s2'):css('--s1')), cornerradius:3},
-    customdata:m.map(r=>r.listed), hovertemplate:'%{x}: %{y} of %{customdata} economies<extra></extra>'}],
-    base({margin:{l:36,r:8,t:24,b:30}, bargap:.3,
-      annotations:[{x:2024,y:m[m.length-1].missing,text:'2024: reporting<br>still incomplete',showarrow:false,yshift:22,xanchor:'right',font:{size:11.5,color:css('--ink2')}}]}), CFG);
-}
-const L=lg['Least developed countries'], O=lg['All other economies'];
+document.getElementById('statBox').innerHTML = `
+  <div class="row"><div class="k">Average share of years missing</div><div class="v2">${fmt(L.mean_gap_pct)}% <span style="font-weight:400;color:var(--ink2);font-size:15px">LDCs</span> · ${fmt(O.mean_gap_pct)}% <span style="font-weight:400;color:var(--ink2);font-size:15px">other</span></div></div>
+  <div class="row"><div class="k">Difference</div><div class="v2">${fmt(T.diff_pp)} percentage points</div><div class="ci">95% interval ${fmt(T.diff_ci95[0])} to ${fmt(T.diff_ci95[1])}; permutation test p &lt; 0.001</div></div>
+  <div class="row"><div class="k">Economies with at least one missing year</div><div class="v2">${fmt(L.share_any_gap_pct)}% · ${fmt(O.share_any_gap_pct)}%</div><div class="ci">LDCs · other economies. Small island States: ${fmt(S.share_any_gap_pct)}%</div></div>
+  <div class="row"><div class="k">No 2024 value yet (reporting lag)</div><div class="v2">${fmt(L.share_missing_latest_pct)}% · ${fmt(O.share_missing_latest_pct)}%</div></div>`;
+const R = Object.fromEntries(D.coverage_regions.map(r=>[r.group,r]));
 document.getElementById('gapCallout').innerHTML =
-  `On average, a least developed country has no published value for <strong>${fmt(L.mean_gap_pct,0)}%</strong> of years, against <strong>${fmt(O.mean_gap_pct,0)}%</strong> for economies outside the LDC, SIDS and LLDC groups. ${fmt(L.share_missing_latest_pct,0)}% of LDCs have no 2024 value yet, against ${fmt(O.share_missing_latest_pct,0)}% of other economies. Europe is almost complete; Oceania and Africa have the largest gaps.`;
+  `Most other economies have complete records (${fmt(T.share_zero_gap_pct[1])}% have no missing year), while ${fmt(100-T.share_zero_gap_pct[0])}% of LDCs have at least one. By region, Oceania has by far the largest gaps (${fmt(R['Oceania'].mean_gap_pct)}% of years), Europe is almost complete (${fmt(R['Europe'].mean_gap_pct)}%), and Africa, Asia and the Americas lie between ${fmt(Math.min(R['Africa'].mean_gap_pct,R['Asia'].mean_gap_pct,R['Americas'].mean_gap_pct))}% and ${fmt(Math.max(R['Africa'].mean_gap_pct,R['Asia'].mean_gap_pct,R['Americas'].mean_gap_pct))}%. Gaps are not only a development issue: the Russian Federation and Belarus have no published value from 2022 onwards.`;
 
 // table
 const rowsT=D.coverage.map(r=>Object.assign({},r,{grp:[r.ldc?'LDC':'',r.sids?'SIDS':'',r.lldc?'LLDC':''].filter(Boolean).join(', ')}));
 let sortK='gap_pct', sortD=-1;
 function renderTable(){
   rowsT.sort((a,b)=>{const x=a[sortK],y=b[sortK]; if(x==null) return 1; if(y==null) return -1; return (x>y?1:x<y?-1:0)*sortD;});
-  document.querySelector('#covTable tbody').innerHTML=rowsT.map(r=>`<tr><td>${r.name}</td><td>${r.region??''}</td><td>${r.grp}</td><td class="n">${r.years_reported} / ${r.years_listed}</td><td class="n">${fmt(r.gap_pct,0)}</td><td class="n">${r.last_year??'–'}</td></tr>`).join('');
+  document.querySelector('#covTable tbody').innerHTML=rowsT.map(r=>`<tr><td>${esc(r.name)}${r.absent?' <span style="color:var(--muted)">(not listed)</span>':''}</td><td>${esc(r.region)}</td><td>${r.grp}</td><td class="n">${r.years_reported} / ${r.years_listed}</td><td class="n">${fmt(r.gap_pct,0)}</td><td class="n">${r.last_year??'–'}</td></tr>`).join('');
+  document.querySelectorAll('#covTable th').forEach(th=>th.setAttribute('aria-sort', th.dataset.k===sortK?(sortD>0?'ascending':'descending'):'none'));
 }
-document.querySelectorAll('#covTable th').forEach(th=>th.onclick=()=>{const k=th.dataset.k; sortD = sortK===k?-sortD:(k==='name'||k==='region'||k==='grp'?1:-1); sortK=k; renderTable();});
+document.querySelectorAll('#covTable th button').forEach(b=>b.onclick=()=>{const k=b.parentElement.dataset.k; sortD = sortK===k?-sortD:(['name','region','grp'].includes(k)?1:-1); sortK=k; renderTable();});
 
-// ---------- 05 HS ----------
+// ---------- 02 missing by year ----------
+function renderMissYear(){
+  const m=D.missing_by_year, last=m[m.length-1];
+  Plotly.react('missYear',[{type:'bar', x:m.map(r=>r.year), y:m.map(r=>r.missing),
+    marker:{color:m.map(r=>r.year===2024?'rgba(0,0,0,0)':css('--miss')), line:{color:css('--miss'), width:m.map(r=>r.year===2024?1.5:0)}, cornerradius:3},
+    customdata:m.map(r=>[r.listed, r.missing_ldc]), hovertemplate:'%{x}: %{y} of %{customdata[0]} economies (%{customdata[1]} LDCs)<extra></extra>'}],
+    base({margin:{l:40,r:8,t:28,b:30}, bargap:.35, yaxis:{gridcolor:css('--grid'), zeroline:false, range:[0,Math.max(...m.map(r=>r.missing))*1.12], title:{text:'economies', font:{size:12}}},
+      annotations:[
+        {x:2017,y:MY[2017].missing,text:`${MY[2017].missing}`,showarrow:false,yshift:12,font:{size:12,color:css('--ink')}},
+        {x:2023,y:MY[2023].missing,text:`${MY[2023].missing}`,showarrow:false,yshift:12,font:{size:12,color:css('--ink')}},
+        {x:2024,y:last.missing,text:narrow()?'lag':'2024: lag',showarrow:false,yshift:12,xanchor:'right',font:{size:11.5,color:css('--muted')}}]}), CFG);
+  label('missYear', `Column chart. Economies with no published value: ${MY[2017].missing} in 2017, ${MY[2023].missing} in 2023, ${last.missing} in 2024 (incomplete).`);
+  dataTable(document.getElementById('missYearTable'), ['Year','Economies listed','With no value','of which LDCs'], m.map(r=>[r.year,r.listed,r.missing,r.missing_ldc]));
+}
+
+// ---------- 03 map ----------
+const catSel = document.getElementById('mapCat');
+catSel.innerHTML = Object.entries(D.meta.categories).map(([k,v])=>`<option value="${k}">${esc(v)}</option>`).join('');
+let layer='gap';
+document.querySelectorAll('[data-layer]').forEach(b=>b.onclick=()=>{layer=b.dataset.layer; document.querySelectorAll('[data-layer]').forEach(x=>x.setAttribute('aria-pressed',x===b)); renderMap();});
+['mapCat','mapMeasure','mapYear'].forEach(id=>document.getElementById(id).addEventListener('input',renderMap));
+const ramp = n => { const s=css(n).split(',').map(x=>x.trim()); return s.map((c,i)=>[i/(s.length-1),c]); };
+function geo(){ return {showframe:false, showcoastlines:false, showcountries:true, countrycolor:css('--surface'), countrywidth:.5,
+  showland:true, landcolor:css('--nodata'), bgcolor:'rgba(0,0,0,0)', projection:{type:'natural earth'}, resolution:50, lataxis:{range:[-58,85]}}; }
+function cbar(title, extra={}){
+  const b = narrow() ? {orientation:'h', x:.5, xanchor:'center', y:-0.04, len:.9, thickness:8} : {thickness:10, len:.7};
+  return Object.assign(b, {outlinewidth:0, tickfont:{color:css('--ink2')}, title:{text:title, font:{color:css('--ink2'), size:12}, side: narrow()?'top':'right'}}, extra);
+}
+function renderMap(){
+  const el=document.getElementById('map'); el.style.height = Math.round(Math.max(300, Math.min(520, el.clientWidth*0.56)))+'px';
+  const isGap = layer==='gap';
+  ['catWrap','measWrap','yearWrap'].forEach(id=>document.getElementById(id).style.display = isGap?'none':'');
+  const traces=[];
+  if(isGap){
+    const c=D.coverage.filter(r=>r.iso3 && !r.absent), a=D.coverage.filter(r=>r.iso3 && r.absent);
+    const tip = r => `<b>${esc(r.name)}</b><br>${r.absent?'Not listed as a reporter':`${r.gap_years} of ${r.years_listed} years missing`}<br>Latest year with a value: ${r.last_year??'none'}`;
+    traces.push({type:'choropleth', locations:c.map(r=>r.iso3), z:c.map(r=>r.gap_pct), zmin:0, zmax:100, colorscale:ramp('--warm'),
+      marker:{line:{color:css('--surface'),width:.4}}, text:c.map(tip), hovertemplate:'%{text}<extra></extra>', colorbar:cbar('% of years missing',{ticksuffix:'%'})});
+    traces.push({type:'choropleth', locations:a.map(r=>r.iso3), z:a.map(()=>1), colorscale:[[0,css('--unlisted')],[1,css('--unlisted')]], showscale:false,
+      marker:{line:{color:css('--surface'),width:.4}}, text:a.map(tip), hovertemplate:'%{text}<extra></extra>'});
+    const p=D.coverage.filter(r=>r.iso3 && D.points[r.iso3]);
+    traces.push({type:'scattergeo', lat:p.map(r=>D.points[r.iso3][0]), lon:p.map(r=>D.points[r.iso3][1]),
+      marker:{size:7, color:p.map(r=>r.absent?css('--unlisted'):r.gap_pct), cmin:0, cmax:100, colorscale:ramp('--warm'), line:{color:css('--ink2'), width:.8}},
+      text:p.map(tip), hovertemplate:'%{text}<extra></extra>', showlegend:false});
+    document.getElementById('mapLegend').innerHTML = `<span><span class="sw" style="background:var(--unlisted)"></span>Not listed as a reporter</span><span><span class="sw" style="background:var(--nodata)"></span>Not covered by UNCTADstat (territory)</span><span><span class="sw dot" style="background:var(--miss)"></span>Small island State (dot)</span><span>Stronger colour = more years missing</span>`;
+    label('map', `World map of the share of years 2002–2023 with no published creative-goods export value. Oceania ${fmt(R['Oceania'].mean_gap_pct)}%, Africa ${fmt(R['Africa'].mean_gap_pct)}%, Europe ${fmt(R['Europe'].mean_gap_pct)}%.`);
+  } else {
+    const yr=+document.getElementById('mapYear').value; document.getElementById('mapYearOut').textContent=yr;
+    const meas=document.getElementById('mapMeasure').value, i=Y.indexOf(yr);
+    catSel.disabled = meas==='pm'; if(meas==='pm') catSel.value='CER000';
+    const loc=[], z=[], txt=[];
+    for(const [code,p] of Object.entries(D.panel)){
+      const e=D.economies[code]; if(!e||!e.iso3) continue;
+      const v = meas==='v' ? p.v[catSel.value][i] : p.pm[i];
+      if(v==null) continue;
+      loc.push(e.iso3); z.push(meas==='v' ? Math.log10(Math.max(v,0.01)) : v);
+      txt.push(meas==='v' ? `<b>${esc(e.name)}</b><br>${esc(D.meta.categories[catSel.value])}, ${yr}<br>$${fmt(v, v<1?2:v<10?1:0)} million` : `<b>${esc(e.name)}</b><br>${yr}: ${fmt(v,2)}% of merchandise exports`);
+    }
+    const ticks = meas==='v' ? {tickvals:[-2,-1,0,1,2,3,4,5], ticktext:['0.01','0.1','1','10','100','1k','10k','100k']} : {ticksuffix:'%'};
+    traces.push({type:'choropleth', locations:loc, z, text:txt, hovertemplate:'%{text}<extra></extra>', colorscale:ramp('--seq'),
+      marker:{line:{color:css('--surface'), width:.4}}, colorbar:cbar(meas==='v'?'$ million (log scale)':'% of merchandise exports', ticks)});
+    document.getElementById('mapLegend').innerHTML = `<span><span class="sw" style="background:var(--nodata)"></span>No value published for ${yr}</span>${yr>=2022?'<span>Russian Federation and Belarus: no value from 2022</span>':''}${yr===2024?'<span>2024 reporting is still incomplete</span>':''}`;
+    label('map', `World map of creative goods exports, ${D.meta.categories[catSel.value]}, ${yr}.`);
+  }
+  Plotly.react('map', traces, base({margin:{l:0,r:0,t:0,b:narrow()?40:0}, geo:geo()}), CFG);
+}
+
+// ---------- 04 HS ----------
 function renderHS(){
-  const P=D.hs_pairs;
-  const tr=[['Kept 1:1',r=>r.kept,'--axis'],['Renumbered, split or merged',r=>r.renumbered+r.split+r.merged,'--s1'],['Complex',r=>r.complex,'--s2']]
-   .map(([n,f,c])=>({type:'bar', orientation:'h', name:n, y:P.map(r=>narrow()?r.pair.replace('→20','→'):'HS '+r.pair), x:P.map(f),
-     marker:{color:css(c), line:{color:css('--surface'), width:2}},
-     customdata:P.map(r=>r.total), hovertemplate:`${n}: %{x} of %{customdata} codes<extra>%{y}</extra>`}));
-  Plotly.react('hsPairs', tr, base({barmode:'stack', bargap:.4, margin:{l:narrow()?80:96,r:12,t:4,b:30},
-    yaxis:{autorange:'reversed', gridcolor:'rgba(0,0,0,0)'}, xaxis:{gridcolor:css('--grid'), zeroline:false}}), CFG);
-  const C=D.hs_categories_2022.map(r=>Object.assign({},r,{pct:r.changed/r.codes*100})).sort((a,b)=>a.pct-b.pct||a.codes-b.codes);
-  Plotly.react('hsCats',[{type:'bar', orientation:'h', y:C.map(r=>lab(r.label)), x:C.map(r=>r.pct),
-    marker:{color:css('--s1'), cornerradius:4}, text:C.map(r=>`${r.changed}/${r.codes}`), textposition:'outside', cliponaxis:false, textfont:{color:css('--ink2'), size:11.5},
-    hovertemplate:'%{y}: %{text} codes changed<extra></extra>'}],
-    base({margin:{l:narrow()?100:250,r:40,t:4,b:30}, bargap:.3, xaxis:{gridcolor:css('--grid'), ticksuffix:'%', range:[0,110], zeroline:false}, yaxis:{automargin:true, gridcolor:'rgba(0,0,0,0)', tickfont:{size:11.5}}}), CFG);
+  const P=D.hs_pairs, ylab=P.map(r=>narrow()?r.pair.replace('→20','→'):'HS '+r.pair);
+  const real=P.map(r=>r.total-r.kept-r.renumbered-r.complex_persists), carve=P.map(r=>r.complex_persists);
+  Plotly.react('hsPairs', [
+    {type:'bar', orientation:'h', y:ylab, x:real, name:'Split, merged or re-linked', marker:{color:css('--miss'), line:{color:css('--surface'),width:2}},
+     customdata:P.map(r=>r.total), hovertemplate:'%{x} of %{customdata} codes split, merged or re-linked<extra>%{y}</extra>'},
+    {type:'bar', orientation:'h', y:ylab, x:carve, name:'Code continues, partial link', marker:{color:css('--miss2'), line:{color:css('--surface'),width:2}},
+     customdata:P.map(r=>r.total), hovertemplate:'%{x} of %{customdata} codes continue with a partial link<extra>%{y}</extra>'}],
+    base({barmode:'stack', bargap:.45, margin:{l:narrow()?72:96,r:56,t:4,b:30},
+      annotations:P.map((r,i)=>({x:real[i]+carve[i], y:ylab[i], text:`of ${r.total}`, showarrow:false, xanchor:'left', xshift:6, font:{size:12,color:css('--muted')}})),
+      yaxis:{autorange:'reversed', gridcolor:'rgba(0,0,0,0)'}, xaxis:{gridcolor:css('--grid'), zeroline:false, title:{text:'codes', font:{size:12}}}}), CFG);
+  label('hsPairs', 'Creative HS codes not kept one-to-one: ' + P.map((r,i)=>`${r.pair}: ${real[i]} changed and ${carve[i]} with a partial link, of ${r.total}`).join('; '));
+  const sub = new Set(Object.values(D.meta.design_sub));
+  const C=D.hs_categories_2022.filter(r=>r.changed+r.carveout>0).map(r=>Object.assign({},r,{name:(sub.has(r.label)?'Crafts: ':'')+r.label.replace('Software, video games and recorded media','Software, games & media').replace('Music, performing and visual arts','Music & visual arts').replace('Cultural and natural heritage','Heritage').replace('Books and publishing','Books')}))
+    .sort((a,b)=>(a.changed+a.carveout)-(b.changed+b.carveout));
+  const yl=C.map(r=>`${r.name} (${r.codes})`);
+  Plotly.react('hsCats', [
+    {type:'bar', orientation:'h', y:yl, x:C.map(r=>r.changed), marker:{color:css('--miss'), line:{color:css('--surface'),width:2}}, hovertemplate:'%{x} codes changed<extra>%{y}</extra>'},
+    {type:'bar', orientation:'h', y:yl, x:C.map(r=>r.carveout), marker:{color:css('--miss2'), line:{color:css('--surface'),width:2}}, hovertemplate:'%{x} codes continue with a partial link<extra>%{y}</extra>'}],
+    base({barmode:'stack', bargap:.35, margin:{l:narrow()?150:190,r:12,t:4,b:30}, xaxis:{gridcolor:css('--grid'), zeroline:false, dtick:1, title:{text:'codes (category size in brackets)', font:{size:12}}}, yaxis:{gridcolor:'rgba(0,0,0,0)', tickfont:{size:11.5}}}), CFG);
+  label('hsCats', 'HS 2017 to 2022 changes by category: ' + C.map(r=>`${r.name}: ${r.changed} changed, ${r.carveout} partial links, of ${r.codes}`).join('; '));
 }
-(()=>{const r=D.hs_pairs.find(x=>x.pair==='2017→2022'); const ch=r.total-r.kept;
-  const s=D.hs_list_size;
-  document.getElementById('hsCallout').innerHTML=`In the HS 2022 revision, <strong>${ch} of ${r.total}</strong> creative codes (${fmt(ch/r.total*100,0)}%) were not kept one-to-one, about the same share as in HS 2007. The list itself grew from ${s.HS2002} codes in HS 2002 to ${s.HS2022} in HS 2022. Every code for video games, recorded media and toys changed in 2022, so these are the categories where an apparent trend break is most likely to come from the classification rather than from trade.`;})();
+(()=>{const r=D.hs_pairs.find(x=>x.pair==='2017→2022'); const notkept=r.total-r.kept-r.renumbered, real=notkept-r.complex_persists;
+  document.getElementById('hsCallout').innerHTML=`In the HS 2022 revision, ${notkept} of ${r.total} creative codes were not kept one-to-one. For ${r.complex_persists} of them, including every code for toys, video games and recorded media, the code continues and only gains a partial link to a new heading, so the effect on values is probably small. That leaves <strong>${real} codes (${fmt(real/r.total*100,0)}%)</strong> that were split, merged or re-linked in substance. The HS 2002 → 2007 revision changed more. The list itself grew from ${D.hs_list_size.HS2002} codes to ${D.hs_list_size.HS2022}.`;})();
 
-function renderAll(){ renderTrend(); renderMap(); renderComp(); gapBar('gapBars','mean_gap_pct'); gapBar('latestBars','share_missing_latest_pct'); renderCovMap(); renderMissYear(); renderHS(); }
-Plotly.setPlotConfig({topojsonURL:'assets/'});
+// ---------- 05 trend + composition ----------
+let trendMode='abs';
+document.querySelectorAll('[data-trend]').forEach(b=>b.onclick=()=>{trendMode=b.dataset.trend; document.querySelectorAll('[data-trend]').forEach(x=>x.setAttribute('aria-pressed', x===b)); renderTrend();});
+function renderTrend(){
+  const TR=D.trend, last=Y.length-1;
+  const S3=[['China','--val',2.5],['Developed economies','--ref',2],['Developing economies excl. China','--ink2',2]];
+  const traces=S3.map(([k,c,w])=>{
+    const y = trendMode==='abs' ? TR[k] : TR[k].map((v,i)=>v==null?null:v/TR['World'][i]*100);
+    return {x:Y, y, name:k, type:'scatter', mode:'lines+markers', line:{color:css(c), width:w},
+      marker:{size:Y.map((_,i)=>i===last?8:0), symbol:'circle-open', color:css(c), line:{width:2}},
+      hovertemplate: trendMode==='abs' ? `${k}: $%{y:,.1f} billion<extra></extra>` : `${k}: %{y:.1f}%<extra></extra>`};
+  });
+  const nm={'Developed economies':'Developed','Developing economies excl. China': narrow()?'Developing<br>excl. China':'Developing excl. China','China':'China'};
+  const ann = S3.map(([k],i)=>({x:Y[last], y:traces[i].y[last], text:nm[k], xanchor:'left', xshift:8, showarrow:false, font:{color:css('--ink2'), size:12}}));
+  const shapes = trendMode==='share' ? [{type:'rect', xref:'paper', x0:0, x1:1, y0:23, y1:26.4, fillcolor:css('--ink2'), opacity:.07, line:{width:0}}] :
+    [{type:'line', x0:2011, x1:2011, yref:'paper', y0:0, y1:1, line:{color:css('--axis'), width:1, dash:'dot'}}];
+  if(trendMode==='abs') ann.push({x:2011, yref:'paper', y:1, text:'2011: developing economies<br>overtake developed', showarrow:false, xanchor:'left', xshift:4, yanchor:'top', font:{size:11.5,color:css('--muted')}});
+  Plotly.react('trend', traces, base({margin:{l:44,r:narrow()?84:150,t:12,b:36}, hovermode:'x unified', shapes, annotations:ann,
+    xaxis:{range:[2001.5,2024.5], gridcolor:'rgba(0,0,0,0)', linecolor:css('--axis'), dtick:narrow()?5:2},
+    yaxis:{gridcolor:css('--grid'), zeroline:false, rangemode:'tozero', ticksuffix: trendMode==='abs'?'':'%', tickprefix: trendMode==='abs'?'$':''}}), CFG);
+  label('trend', `Line chart, 2002–2024. In 2024: China $${fmt(TR['China'][last])} billion, developed economies $${fmt(TR['Developed economies'][last])} billion, developing economies excluding China $${fmt(TR['Developing economies excl. China'][last])} billion.`);
+  dataTable(document.getElementById('trendTable'), ['Year','World','Developed','Developing','Developing excl. China','China'],
+    Y.map((y,i)=>[y, fmt(TR['World'][i],1), fmt(TR['Developed economies'][i],1), fmt(TR['Developing economies'][i],1), fmt(TR['Developing economies excl. China'][i],1), fmt(TR['China'][i],1)]));
+}
+const compGroups=['World','Developed economies','Developing economies','Least developed countries','Small island developing States'];
+const compShort={'World':'World','Developed economies':'Developed','Developing economies':'Developing','Least developed countries':'LDCs','Small island developing States':'SIDS'};
+let compG='World';
+document.getElementById('compSeg').innerHTML = compGroups.map(g=>`<button type="button" data-g="${g}" aria-pressed="${g===compG}">${compShort[g]}</button>`).join('');
+document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{compG=b.dataset.g;document.querySelectorAll('[data-g]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderComp();});
+const crShare = compGroups.map(g=>[g, D.composition_2023[g].CER020/D.composition_2023[g].CER000*100]);
+const crMin = crShare.reduce((a,b)=>a[1]<b[1]?a:b), crMax = crShare.reduce((a,b)=>a[1]>b[1]?a:b);
+document.querySelector('#compTitle + .note').textContent = `Share of each category in creative goods exports, 2023. Crafts and design range from ${fmt(crMin[1])}% (${compShort[crMin[0]]}) to ${fmt(crMax[1])}% (${compShort[crMax[0]]}).`;
+const shortCat = {'Audiovisual, multimedia & photography':'Audiovisual','Crafts & design goods':'Crafts & design','Books & publishing':'Books','Music, performing & visual arts':'Music & arts','Software, video games & recorded media':'Software & games','Cultural & natural heritage':'Heritage','Architecture':'Architecture'};
+function renderComp(){
+  const c=D.composition_2023[compG]; const tot=c.CER000;
+  const keys=Object.keys(D.meta.categories).filter(k=>k!=='CER000');
+  const rows=keys.map(k=>[D.meta.categories[k], c[k]==null?0:c[k]/tot*100, c[k]]).sort((a,b)=>a[1]-b[1]);
+  Plotly.react('comp',[{type:'bar', orientation:'h', y:rows.map(r=>narrow()?(shortCat[r[0]]||r[0]):r[0]), x:rows.map(r=>r[1]),
+    marker:{color:css('--val'), cornerradius:4}, text:rows.map(r=>r[1]>=1?fmt(r[1],0)+'%':'<1%'), textposition:'outside', cliponaxis:false, textfont:{color:css('--ink2')},
+    customdata:rows.map(r=>r[2]), hovertemplate:'%{y}<br>%{x:.1f}% · $%{customdata:,.2f} billion<extra></extra>'}],
+    base({margin:{l:narrow()?100:250,r:40,t:4,b:30}, bargap:.4, xaxis:{gridcolor:css('--grid'), ticksuffix:'%', zeroline:false, range:[0,105]}, yaxis:{automargin:true, gridcolor:'rgba(0,0,0,0)'}}), CFG);
+  label('comp', `${compShort[compG]}, 2023: ` + rows.slice().reverse().map(r=>`${r[0]} ${fmt(r[1],0)}%`).join(', '));
+}
+
+function renderAll(){ if(typeof Plotly==='undefined') return; renderGapDots(); renderMissYear(); renderMap(); renderHS(); renderTrend(); renderComp(); }
+if(typeof Plotly!=='undefined') Plotly.setPlotConfig({topojsonURL:'assets/'});
 renderAll(); renderTable();
-let wasNarrow=narrow(), rt; addEventListener('resize',()=>{clearTimeout(rt); rt=setTimeout(()=>{ if(narrow()!==wasNarrow){wasNarrow=narrow(); renderAll();} },150);});
-})();
+let wasNarrow=narrow(), rt; addEventListener('resize',()=>{clearTimeout(rt); rt=setTimeout(()=>{ if(narrow()!==wasNarrow){wasNarrow=narrow(); renderAll();} else renderMap(); },200);});
+});
 </script>
 </body>
 </html>

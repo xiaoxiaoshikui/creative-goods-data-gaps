@@ -3,3 +3,4 @@ data/raw/m49_overview.html
 __pycache__/
 .venv/
 .DS_Store
+data/raw/geo/countries_centroids.html

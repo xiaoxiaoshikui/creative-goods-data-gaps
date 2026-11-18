@@ -7,11 +7,14 @@ mkdir -p data/raw/hs/unctadstat data/raw/hs/unsd
 # 1. UNCTADstat bulk file: Creative goods, value (7-zip archive, ~335 MB; ~4 GB CSV once extracted)
 curl -L -o data/raw/US_CreativeGoodsValue.7z \
   "https://unctadstat-api.unctad.org/bulkdownload/US.CreativeGoodsValue/US_CreativeGoodsValue"
-python -c "import py7zr; py7zr.SevenZipFile('data/raw/US_CreativeGoodsValue.7z').extractall('data/raw')"
+expected=$(grep ' US_CreativeGoodsValue.7z' data/CHECKSUMS.sha256 | cut -d' ' -f1)
+actual=$(shasum -a 256 data/raw/US_CreativeGoodsValue.7z | cut -d' ' -f1)
+[ "$expected" = "$actual" ] || echo "WARNING: UNCTADstat file differs from version 1.1 (UNCTAD may have revised the data); results may change."
+python3 -c "import py7zr; py7zr.SevenZipFile('data/raw/US_CreativeGoodsValue.7z').extractall('data/raw')"
 
 # 2. UN M49 country groups
 curl -L -A "Mozilla/5.0" -o data/raw/m49_overview.html "https://unstats.un.org/unsd/methodology/m49/overview/"
-python -c "import pandas as pd; pd.read_html('data/raw/m49_overview.html', attrs={'id':'downloadTableEN'})[0].to_csv('data/raw/m49.csv', index=False)"
+python3 -c "import pandas as pd; pd.read_html('data/raw/m49_overview.html', attrs={'id':'downloadTableEN'})[0].to_csv('data/raw/m49.csv', index=False)"
 
 # 3. UNCTAD creative-goods HS lists, one per HS edition
 curl -L -o data/raw/hs/unctadstat/DimCreativeProducts_Creatives_Hierarchy.xls "https://unctadstat.unctad.org/EN/Classifications/DimCreativeProducts_Creatives_Hierarchy.xls"
@@ -25,4 +28,8 @@ curl -L -o data/raw/hs/unsd/HS_2007_to_HS_2002_Correlation_and_conversion_tables
 curl -L -o data/raw/hs/unsd/HS_2012_to_HS_2007_Correlation_and_conversion_tables.xls "$U/HS%202012%20to%20HS%202007%20Correlation%20and%20conversion%20tables.xls"
 curl -L -o data/raw/hs/unsd/HS2017toHS2012ConversionAndCorrelationTables.xlsx "$U/HS2017toHS2012ConversionAndCorrelationTables.xlsx"
 curl -L -o data/raw/hs/unsd/HS2022toHS2017ConversionAndCorrelationTables.xlsx "$U/HS2022toHS2017ConversionAndCorrelationTables.xlsx"
+# 5. Country centroids (for small-State markers on the maps)
+mkdir -p data/raw/geo
+curl -L -o data/raw/geo/countries_centroids.html "https://developers.google.com/public-data/docs/canonical/countries_csv"
+python3 -c "import pandas as pd; pd.read_html('data/raw/geo/countries_centroids.html')[0].to_csv('data/raw/geo/centroids.csv', index=False)"
 echo "Done. Next: python scripts/build_continuity.py && python scripts/build_data.py"

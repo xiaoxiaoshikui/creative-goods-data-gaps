@@ -15,6 +15,7 @@ import json
 from pathlib import Path
 
 import duckdb
+import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,8 +44,14 @@ GROUPS = {
 # Economies UNCTADstat reports that are not in the M49 overview table
 EXTRA_ISO3 = {"158": "TWN", "530": "ANT", "890": "YUG", "891": "SCG", "736": "SDN", "200": "CSK"}
 
-# Economies created after 2002: count gaps only from the year they came into existence
-CREATED = {"CUW": 2010, "SXM": 2010, "BES": 2010, "SSD": 2011, "MNE": 2006, "SRB": 2006}
+# Code changes: splice the old code into the current one for the years it was used
+SPLICE = [("736", "729", 2002, 2011),   # Sudan (...2011) -> Sudan
+          ("960", "360", 2002, 2002)]   # Indonesia (...2002) -> Indonesia
+# Sovereign states with no reporter rows at all in UNCTADstat (they appear only as partners).
+# Counted as missing in every year; South Sudan from independence (2011).
+ABSENT_STATES = {"706": 2002, "728": 2011, "148": 2002, "332": 2002, "226": 2002,
+                 "795": 2002, "408": 2002, "584": 2002, "520": 2002}
+BOOT_SEED, BOOT_B = 20261118, 20000
 
 FULL_YEARS = list(range(2002, 2024))  # 2024 kept separately: reporting lag
 LAST_YEAR = 2024
@@ -58,6 +65,7 @@ def load() -> pd.DataFrame:
         SELECT Year AS year, Economy AS code, "Economy Label" AS name, Flow AS flow,
                Product AS product, "US$ at current prices in millions" AS usd,
                "US$ at current prices in millions Footnote" AS note,
+               "US$ at current prices in millions Missing value" AS mv,
                "Percentage of total world" AS pct_world,
                "Percentage of total merchandise trade" AS pct_merch
         FROM read_csv_auto('{src}', types={{'Economy':'VARCHAR','Partner':'VARCHAR','Flow':'VARCHAR'}})
@@ -77,7 +85,8 @@ def m49() -> pd.DataFrame:
     })
     for c in ("ldc", "lldc", "sids"):
         t[c] = t[c].notna()
-    return t[["code", "iso3", "region", "subregion", "ldc", "lldc", "sids"]]
+    t = t.rename(columns={"Country or Area": "country", "ISO-alpha2 Code": "iso2"})
+    return t[["code", "iso3", "iso2", "country", "region", "subregion", "ldc", "lldc", "sids"]]
 
 
 def clean(o):
@@ -91,6 +100,17 @@ def clean(o):
     if isinstance(o, float) and o != o:
         return None
     return o
+
+
+def sig(x, n=3):
+    """Round to n significant figures, so small exporters are not rounded to zero."""
+    if pd.isna(x):
+        return None
+    x = float(x)
+    if x == 0:
+        return 0.0
+    from math import floor, log10
+    return round(x, -int(floor(log10(abs(x)))) + (n - 1))
 
 
 def r(x, nd=1):
@@ -132,43 +152,81 @@ def main() -> None:
         piv = piv.reindex(years_all)
         tot = s[s["product"] == "CER000"].set_index("year").reindex(years_all)
         panel[code] = {
-            "v": {p: [r(x, 1) for x in piv[p]] if p in piv else [None] * len(years_all) for p in CATS},
+            "v": {p: [sig(x) for x in piv[p]] if p in piv else [None] * len(years_all) for p in CATS},
             "pm": [r(x, 2) for x in tot.pct_merch],
             "pw": [r(x, 3) for x in tot.pct_world],
         }
 
     # ---- 4. Coverage / data gaps --------------------------------------------------
-    # Current economies only: drop historical entities (e.g. Netherlands Antilles,
-    # Serbia and Montenegro, pre-2002 codes) that are not in today's M49 list.
+    # Status of each current economy-year for total creative goods exports:
+    #   value          a value is published
+    #   not_applicable UNCTADstat marks the economy as not applicable (e.g. not yet in existence): excluded
+    #   unpublished    the row exists but no value is published ("Not publishable" etc.)
+    #   no_row         the economy has no row for that year
+    #   absent         the economy never appears as a reporter (ABSENT_STATES)
+    tot_all = ex[(ex["product"] == "CER000") & (ex.code.str.len() == 3)].copy()
+    for old, new_code, y0, y1 in SPLICE:
+        tot_all = tot_all[~((tot_all.code == new_code) & tot_all.year.between(y0, y1))]
+        tot_all.loc[(tot_all.code == old) & tot_all.year.between(y0, y1), "code"] = new_code
     current = set(meta.code) | {"158"}
-    tot = econ[(econ["product"] == "CER000") & econ.code.isin(current)]
-    rows = []
-    for code, s in tot.groupby("code"):
-        s = s.set_index("year")
-        m = econ_meta.loc[code]
-        start = CREATED.get(m["iso3"], FULL_YEARS[0])
-        yrs = [y for y in FULL_YEARS if y >= start]
-        rep = [y for y in yrs if y in s.index and pd.notna(s.loc[y, "usd"])]
-        listed = [y for y in yrs if y in s.index]
-        rows.append({
-            "code": code, "name": m["name"], "iso3": m["iso3"],
-            "region": m["region"] if isinstance(m["region"], str) else None,
-            "ldc": bool(m["ldc"]) if pd.notna(m["ldc"]) else False,
-            "lldc": bool(m["lldc"]) if pd.notna(m["lldc"]) else False,
-            "sids": bool(m["sids"]) if pd.notna(m["sids"]) else False,
-            "years_listed": len(listed), "years_reported": len(rep),
-            "reported_latest": bool(LAST_YEAR in s.index and pd.notna(s.loc[LAST_YEAR, "usd"])),
-            "last_year": int(max(rep + ([LAST_YEAR] if LAST_YEAR in s.index and pd.notna(s.loc[LAST_YEAR, "usd"]) else []))) if rep else None,
+    tot_all = tot_all[tot_all.code.isin(current)]
+    years_cov = FULL_YEARS + [LAST_YEAR]
+    status = {}
+    for row in tot_all.itertuples():
+        if pd.notna(row.usd):
+            status[(row.code, row.year)] = "value"
+        elif isinstance(row.mv, str) and row.mv.strip().lower() == "not applicable":
+            status[(row.code, row.year)] = "not_applicable"
+        else:
+            status[(row.code, row.year)] = "unpublished"
+    reporters = sorted(set(tot_all.code))
+    meta_i = meta.set_index("code")
+    names = econ.drop_duplicates("code").set_index("code")["name"].to_dict()
+    names.update({"729": "Sudan", "360": "Indonesia"})
+
+    def info(code):
+        m = meta_i.loc[code] if code in meta_i.index else None
+        iso3 = (m["iso3"] if m is not None else None) or EXTRA_ISO3.get(code)
+        return {
+            "code": code, "iso3": iso3,
+            "name": names.get(code) or (m["country"] if m is not None and "country" in m else code),
+            "region": m["region"] if m is not None and isinstance(m["region"], str) else None,
+            "ldc": bool(m["ldc"]) if m is not None else False,
+            "lldc": bool(m["lldc"]) if m is not None else False,
+            "sids": bool(m["sids"]) if m is not None else False,
+        }
+
+    rows, yearly = [], []
+    for code in reporters + sorted(ABSENT_STATES):
+        absent = code in ABSENT_STATES
+        st = {y: ("absent" if absent and y >= ABSENT_STATES[code] else
+                  "not_applicable" if absent else status.get((code, y), "no_row")) for y in years_cov}
+        yrs = [y for y in FULL_YEARS if st[y] != "not_applicable"]
+        if not yrs:
+            continue
+        rep = [y for y in yrs if st[y] == "value"]
+        d = info(code)
+        d["name"] = {"728": "South Sudan", "520": "Nauru", "408": "DPR Korea"}.get(code, d["name"])
+        d.update({
+            "absent": absent, "years_listed": len(yrs), "years_reported": len(rep),
+            "gap_years": len(yrs) - len(rep),
+            "reported_latest": st[LAST_YEAR] == "value",
+            "last_year": max([y for y in years_cov if st[y] == "value"], default=None),
         })
+        rows.append(d)
+        for y in years_cov:
+            if st[y] != "not_applicable":
+                yearly.append((code, y, st[y] == "value", d["ldc"], d["sids"], d["lldc"]))
     cov = pd.DataFrame(rows)
-    cov = cov[cov.years_listed > 0]
-    cov["gap_share"] = 1 - cov.years_reported / cov.years_listed
+    cov["gap_share"] = cov.gap_years / cov.years_listed
 
     def summarize(mask, label):
         c = cov[mask]
         return {
-            "group": label, "n": int(len(c)),
+            "group": label, "n": int(len(c)), "n_absent": int(c.absent.sum()),
             "mean_gap_pct": r(c.gap_share.mean() * 100, 1),
+            "median_gap_pct": r(c.gap_share.median() * 100, 1),
+            "pooled_gap_pct": r(c.gap_years.sum() / c.years_listed.sum() * 100, 1),
             "share_any_gap_pct": r((c.gap_share > 0).mean() * 100, 1),
             "share_missing_latest_pct": r((~c.reported_latest).mean() * 100, 1),
         }
@@ -183,11 +241,28 @@ def main() -> None:
     ]
     cov_regions = [summarize(cov.region == reg, reg) for reg in sorted(cov.region.dropna().unique())]
 
+    # Uncertainty for the LDC vs other comparison: bootstrap over economies, permutation test
+    rng = np.random.default_rng(BOOT_SEED)
+    a, b = cov[cov.ldc].gap_share.to_numpy(), cov[other].gap_share.to_numpy()
+    ra = rng.choice(a, (BOOT_B, len(a))).mean(1)
+    rb = rng.choice(b, (BOOT_B, len(b))).mean(1)
+    pool, obs = np.concatenate([a, b]), a.mean() - b.mean()
+    perm = np.array([(lambda q: q[:len(a)].mean() - q[len(a):].mean())(rng.permutation(pool)) for _ in range(BOOT_B)])
+    ldc_test = {
+        "n_ldc": int(len(a)), "n_other": int(len(b)),
+        "diff_pp": r(obs * 100, 1), "diff_ci95": [r(x * 100, 1) for x in np.percentile(ra - rb, [2.5, 97.5])],
+        "ratio": r(a.mean() / b.mean(), 1), "ratio_ci95": [r(x, 1) for x in np.percentile(ra / rb, [2.5, 97.5])],
+        "perm_p_one_sided": float((np.sum(perm >= obs) + 1) / (BOOT_B + 1)),
+        "share_zero_gap_pct": [r((a == 0).mean() * 100, 0), r((b == 0).mean() * 100, 0)],
+        "method": f"Bootstrap over economies ({BOOT_B} draws) and one-sided permutation test, seed {BOOT_SEED}",
+    }
+
+    Yd = pd.DataFrame(yearly, columns=["code", "year", "has", "ldc", "sids", "lldc"])
     missing_by_year = []
-    for y in years_all:
-        s = tot[tot.year == y]
-        s = s[s.apply(lambda row: row.year >= CREATED.get(row.iso3, 0), axis=1)]
-        missing_by_year.append({"year": int(y), "listed": int(len(s)), "missing": int(s.usd.isna().sum())})
+    for y in years_cov:
+        s_ = Yd[Yd.year == y]
+        missing_by_year.append({"year": int(y), "listed": int(len(s_)), "missing": int((~s_.has).sum()),
+                                "missing_ldc": int((~s_.has & s_.ldc).sum()), "n_ldc": int(s_.ldc.sum())})
 
     # ---- 5. HS revisions: stability of the creative-goods definition --------------
     hs_rows = []
@@ -208,11 +283,25 @@ def main() -> None:
     for (cc, cl), s in last_pair.groupby(["category_code", "category_label"]):
         if cc in ("CER000", "CER020"):
             continue
-        changed = int((~s.relationship.isin(["unchanged_1:1"])).sum())
-        hs_cat.append({"code": cc, "label": cl, "codes": int(len(s)), "changed": changed})
+        carve = (s.relationship == "complex_n:m") & (s.code_persists.astype(str) == "True")
+        real = ~s.relationship.isin(["unchanged_1:1", "renumbered_1:1"]) & ~carve
+        hs_cat.append({"code": cc, "label": cl, "codes": int(len(s)), "changed": int(real.sum()),
+                       "carveout": int(carve.sum())})
     codes = pd.read_csv(ROOT / "data" / "hs" / "creative_hs_codes.csv", dtype=str)
     vcol = [c for c in codes.columns if "version" in c or "edition" in c][0]
     hs_counts = codes.groupby(vcol).size().to_dict()
+
+    # Map helpers: centroid points for small island States and economies missing from the base map
+    topo = json.loads((ROOT / "docs" / "assets" / "world_50m.json").read_text())
+    drawn = {g.get("id") for g in topo["objects"]["countries"]["geometries"]}
+    cen = pd.read_csv(RAW / "geo" / "centroids.csv", keep_default_na=False).set_index("country")
+    iso2 = meta.set_index("iso3")["iso2"].to_dict()
+    points = {}
+    for row in cov.itertuples():
+        if row.iso3 and (row.sids or row.iso3 not in drawn):
+            k = iso2.get(row.iso3)
+            if k in cen.index:
+                points[row.iso3] = [float(cen.loc[k, "latitude"]), float(cen.loc[k, "longitude"])]
 
     out = {
         "meta": {
@@ -232,7 +321,7 @@ def main() -> None:
                           for k, v in econ_meta.loc[c].to_dict().items()} for c in panel},
         "panel": panel,
         "coverage": cov.drop(columns=["gap_share"]).assign(gap_pct=(cov.gap_share * 100).round(1)).to_dict("records"),
-        "coverage_groups": cov_groups, "coverage_regions": cov_regions,
+        "points": points, "coverage_groups": cov_groups, "coverage_regions": cov_regions, "ldc_test": ldc_test,
         "missing_by_year": missing_by_year,
         "hs_pairs": hs_rows, "hs_categories_2022": hs_cat,
         "hs_list_size": {str(k): int(v) for k, v in hs_counts.items()},
